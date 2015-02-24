@@ -25,16 +25,23 @@
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script>
+    $(document).ready(function(){
+      $('.clickable').click(function(){
+        window.document.location = $(this).data('url')
+      });
+
+    });
+    </script>
   </head>
 
   <body>
     <!-- top header -->
-    <div class='container'>
+    <div class='container' style='background-color:;'>
     <nav class="navbar">
         <div class="container-fluid">
         <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-linkedin fa-2"></i></p>
@@ -69,90 +76,82 @@
       </div>
 </nav>
 </div>
-<nav class="navbar navbar-default" style='margin:0px;'>
-  <div class="container">
 
-   
+</div>
+
+
+
+ 
+  	<nav class="navbar navbar-default">
+         <div class='container'>
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Investors <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Selling</a></li>
-        <li><a href="#">Buying</a></li>
-        <li><a href="#">Landlords</a></li>
-        <li><a href="#">Letting</a></li>
-        <li><a href="#">Vacational Rentals</a></li>
-        <li><a href="#">New Developments</a></li>
-        
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
+
+      <form class="navbar-form " role="search" method="GET">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+        	<select name='type' class='form-control'>
+			    <option value="">Rent/Sale</option>
+			    <option value="RP">Rent</option>
+			    <option value="SP">Sale</option>
+			</select>
+			<select name='subtype' class='form-control'>
+			    <option value="">Apartment/Villa</option>
+			    <option value="AP">Apartment</option>
+			    <option value="VI">Villa</option>
+			    <option value="CO-OF">Office</option>
+			    <option value="CO-RE">Retail</option>
+			    <option value="CO-ST">Staff Acc.</option>
+			    <option value="CO-IN">Industrial</option>
+			</select>
+			<select name='br' class='form-control'>
+			    <option value="">Bedrooms</option>
+			    <option value="0">Studio</option>
+			    <option value="1">1</option>
+			    <option value="2">2</option>
+			    <option value="3">3</option>
+			    <option value="4">4</option>
+			    <option value="5">5</option>
+			</select>
+          <input type="text" name='search' class="form-control" style='margin-left:50px; padding-right:125px;' placeholder="Area or Building or Email">
         </div>
         <button type="submit" class="btn" style='background:#0e3695;color:white;'>Submit</button>
       </form>
-     
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div id="headerwrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <h1>Welcome to PROPERTYSSIMO</h1>
-                    
-                </div>
-            </div><! --/row -->
-        </div><! --/container -->
-    </div><! --/headerwrap -->
-  
-  <div class='container' style='margin-top:3%;'>
-    <div class='row' style='background-color:;'>
-        <div class='col-md-3'>
-            <h1>Why Propertyssimo?</h1>
-            <h3>Here's the reason why...</h3>
-        </div>
-        <div class='row'>
-            <div class='row' style='padding:3%'>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
-            </div>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
-            </div>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
-            </div>
-        </div>
-        <div class='row' style='padding:3%'>
-            <div class='col-md-3'></div>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
-            </div>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
-            </div>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
 
+<div class='container'>
+<h1>{{listings.count}} Properties found</h1>
+
+<table class='table table-hover'>
+  	{% for listing in listings %}
+    <tr class='clickable' data-url='{{listing.get_absolute_url}}' style='cursor:pointer'>
+      <td><img src="{{listing.get_thumbnail_image}}"  style='width:150px;height:100px;'></td>
+      <td>{{listing}}</td>
+      <td>{{listing.type}}</td>
+     <td>{{listing.subtype}}</td>
+     <td>{{listing.bedrooms}}</td>
+     <td>{{listing.location}}</td>
+     <td>{{listing.building}}</td>
+     <td>{{listing.agent_name}}<br>
+     {{listing.agent_email}}<br>
+     {{listing.agent_mobile}}</td>
+      </tr>
+{% endfor %}
+</table>
+</div>
 <footer id="footer" class="top-space">
 
         <div class="footer1">
@@ -223,6 +222,7 @@
         </div>
 
     </footer>   
+                  
   </body>
+  </html>
 
-</html>

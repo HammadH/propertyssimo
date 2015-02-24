@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'listings',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,3 +86,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+
+DBZ_XML_LINK = 'http://prop-pix.com/cms/issmo_dbz/live/'
+PF_XML_LINK = 'http://prop-pix.com/cms/issmo_pf/live_v2/'

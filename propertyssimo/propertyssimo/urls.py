@@ -7,7 +7,9 @@ import views
 
 urlpatterns = patterns('',
     # Examples:
-     url(r'^$', views.Landing.as_view(), name='home'),
+    url(r'^$', views.Landing.as_view(), name='home'),
+    url(r'^properties/$', 'listings.views.show_listings', name='show_listings'),
+    url(r'^property/(?P<id>\d+)$', 'listings.views.listing_details', name='listing_details'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),

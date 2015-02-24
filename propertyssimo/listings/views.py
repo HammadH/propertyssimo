@@ -44,12 +44,21 @@ class ShowListings(View):
 		if bedrooms:
 			listings = listings.filter(bedrooms=bedrooms)
 
+		status = request.GET.get('status', None)
+		if status:
+			listings = listings.filter(status=status)
+
+		published = request.GET.get('published', None)
+		if published:
+			listings = listings.filter(Q(published_on_dbz=published) | Q(published_on_pf=published) | Q(published_on_bayut=published))
+
 		search_keyword = request.GET.get('search', None)
 		if search_keyword:
 			listings = listings.filter(Q(location__icontains=search_keyword) | Q(building__icontains=search_keyword)
 				| Q(agent_email__icontains=search_keyword) | Q(refno__icontains=search_keyword))
 
 		return render_to_response('listings.html', {'listings':listings}, RequestContext(request))
+		
 
 show_listings = ShowListings.as_view()
 

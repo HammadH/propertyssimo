@@ -79,9 +79,6 @@
 
 </div>
 
-
-
- 
   	<nav class="navbar navbar-default">
          <div class='container'>
   <div class="container-fluid">
@@ -96,7 +93,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style='padding:10px;'>
       <ul class="nav navbar-nav">
 
       <form class="navbar-form " role="search" method="GET">
@@ -123,8 +120,25 @@
 			    <option value="3">3</option>
 			    <option value="4">4</option>
 			    <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
 			</select>
-          <input type="text" name='search' class="form-control" style='margin-left:50px; padding-right:125px;' placeholder="Area or Building or Email">
+      <select name='status' class='form-control'>
+          <option value="">Active/Sold</option>
+          <option value="1">Active</option>
+          <option value="0">Sold</option>
+      </select>
+      <select name='published' class='form-control'>
+          <option value="">Published on Portals</option>
+          <option value="True">Yes</option>
+          <option value="No">No</option>
+      </select>
+          <input type="text" name='search' class="form-control" style='margin-left:25px; padding-right:110px;' placeholder="Search">
         </div>
         <button type="submit" class="btn" style='background:#0e3695;color:white;'>Submit</button>
       </form>
@@ -132,22 +146,50 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class='container'>
+<div class='container' style='margin-bottom:250px'>
 <h1>{{listings.count}} Properties found</h1>
 
 <table class='table table-hover'>
+  <tr>
+    <td></td>
+      <td></td>
+      <td>Type</td>
+     <td>Subtype</td>
+     <td>Bedrooms</td>
+     <td>Area</td>
+     <td>Building</td>
+     <td></td>
+  </tr>
   	{% for listing in listings %}
     <tr class='clickable' data-url='{{listing.get_absolute_url}}' style='cursor:pointer'>
       <td><img src="{{listing.get_thumbnail_image}}"  style='width:150px;height:100px;'></td>
       <td>{{listing}}</td>
-      <td>{{listing.type}}</td>
-     <td>{{listing.subtype}}</td>
+      {% if listing.type == "SP" %}
+      <td>Sale</td>
+      {% elif listing.type == "RP" %}
+      <td>Rent</td>
+      {% endif %}
+
+      {% if listing.subtype == "AP" %}
+     <td>Apartment</td>
+     {% elif listing.subtype == "VI" %}
+     <td>Villa</td>
+     {% elif listing.subtype == "CO" %}
+     <td>Commercial</td>
+     {% endif %}
      <td>{{listing.bedrooms}}</td>
      <td>{{listing.location}}</td>
      <td>{{listing.building}}</td>
      <td>{{listing.agent_name}}<br>
      {{listing.agent_email}}<br>
-     {{listing.agent_mobile}}</td>
+     {{listing.agent_mobile}}<br>
+     {% if listing.published_on_dbz == "True" %}
+    <img src="{% static 'assets/img/dub.png' %}" style='zoom:0.25'/> 
+    {% endif %}
+    {% if listing.published_on_pf == "True" %}
+    <img src="{% static 'assets/img/prop.jpg' %}" style='zoom:0.3'/> 
+    {% endif %}
+    </td>
       </tr>
 {% endfor %}
 </table>

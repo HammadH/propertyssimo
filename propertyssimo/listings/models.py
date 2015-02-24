@@ -40,6 +40,9 @@ class Listing(models.Model):
 	bathrooms = models.CharField(max_length=75, blank=False, null=True)
 	amenities = models.CharField(max_length=75, blank=False, null=True)
 	photos = models.TextField(blank=True, null=True)
+	published_on_dbz = models.CharField(max_length=75, blank=False, null=True)
+	published_on_pf = models.CharField(max_length=75, blank=False, null=True)
+	published_on_bayut = models.CharField(max_length=75, blank=False, null=True)
 	
 
 	def __unicode__(self):
@@ -50,8 +53,18 @@ class Listing(models.Model):
 		super(Listing, self).save(*args, **kwargs)
 
 	def delete(self, *args, **kwargs):
-		self.status = 0
-		self.save()
+		if self.published_on_dbz == 'False' and not self.published_on_pf:
+			self.status = 0
+			self.save()
+
+		if self.published_on_pf == 'False' and not self.published_on_dbz:
+			self.status = 0
+			self.save()
+
+		if self.published_on_dbz == 'False' and self.published_on_pf == 'False':
+			self.status = 0
+			self.save() 
+
 
 	def hard_delete(self, *args, **kwargs):
 		super(Listing, self).delete()
@@ -79,7 +92,7 @@ class Listing(models.Model):
 			self.bedrooms = soup.bedrooms.text
 		#parse lastupdate and convert to datetime
 		self.feed_lastupdated = soup.lastupdated.text
-		self.location = soup.location.text if soup.location else None
+		self.location = soup.locationtext.text if soup.locationtext else None
 		self.building = soup.building.text if soup.building else None
 		if soup.bathrooms:
 			self.bathrooms = soup.bathrooms.text
@@ -88,6 +101,7 @@ class Listing(models.Model):
 		if soup.photos:
 			self.photos = soup.photos.text
 		return self
+
 
 	def create_or_update_from_pf_xml(self, soup):
 		self.status = 1
@@ -144,7 +158,7 @@ class Listing(models.Model):
 				self.bedrooms = soup.bedroom.text
 		#parse lastupdate and convert to datetime
 		# self.feed_lastupdated = soup.lastupdated.text
-		self.location = soup.subcommunity.text if soup.subcommunity else None
+		self.location = soup.community.text if soup.community else None
 		self.building = soup.property.text if soup.property else None
 		if soup.bathroom:
 			self.bathrooms = soup.bathroom.text
@@ -160,6 +174,7 @@ class Listing(models.Model):
 					self.photos += '|'
 		return self
 
+
 	def get_absolute_url(self, *args, **kwargs):
 		return reverse('listing_details', kwargs={'id':self.id})
 
@@ -170,6 +185,8 @@ class Listing(models.Model):
 
 	def get_agent_shortname(self):
 		return self.agent_name.strip().split(' ')[0]
+
+
 
 
 

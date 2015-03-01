@@ -168,6 +168,8 @@ class Platform(View):
 			else:
 				return Http404('Listing is None')
 
+create_listing = Platform.as_view()
+
 def convert_to_platform(soup):
 		errors = []
 		#soup is Beautifulsoup

@@ -43,6 +43,7 @@ class Listing(models.Model):
 	published_on_dbz = models.CharField(max_length=75, blank=False, null=True)
 	published_on_pf = models.CharField(max_length=75, blank=False, null=True)
 	published_on_bayut = models.CharField(max_length=75, blank=False, null=True)
+	is_furnished = models.CharField(max_length=75, blank=False, null=True)
 	
 
 	def __unicode__(self):

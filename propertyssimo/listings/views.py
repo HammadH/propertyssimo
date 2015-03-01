@@ -5,6 +5,7 @@ from django.db.models import Q
 
 from listings.models import Listing
 
+from hunter import *
 # type_dict = {
 # 	'RP':['RP', 'for Rent'],
 # 	'SP':['SP', 'for Sale'],
@@ -65,7 +66,10 @@ show_listings = ShowListings.as_view()
 class ListingDetails(View):
 	def get(self, request, *args, **kwargs):
 		listing = Listing.objects.get(id=kwargs.get('id'))
+		# results = search_target(listing)
 		photos = [photo for photo in listing.photos.split('|')]
-		return render_to_response('listing_details.html', {'listing':listing, 'photos':enumerate(photos), 'photos_copy':enumerate(photos)},RequestContext(request))
+		return render_to_response('listing_details.html', {'listing':listing, 'photos':enumerate(photos), 'photos_copy':enumerate(photos),
+	
+			},RequestContext(request))
 
 listing_details = ListingDetails.as_view()

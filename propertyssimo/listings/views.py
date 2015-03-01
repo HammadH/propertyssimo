@@ -134,8 +134,11 @@ show_listings = ShowListings.as_view()
 class ListingDetails(View):
 	def get(self, request, *args, **kwargs):
 		listing = Listing.objects.get(id=kwargs.get('id'))
-		photos = [photo for photo in listing.photos.split('|')]
-		return render_to_response('listing_details.html', {'listing':listing, 'photos':enumerate(photos), 'photos_copy':enumerate(photos)},RequestContext(request))
+		if listing.photos:
+			photos = [photo for photo in listing.photos.split('|')]
+			return render_to_response('listing_details.html', {'listing':listing, 'photos':enumerate(photos), 'photos_copy':enumerate(photos)},RequestContext(request))
+		else:
+			 return render_to_response('listing_details.html', {'listing':listing}, RequestContext(request))
 
 listing_details = ListingDetails.as_view()
 
@@ -143,7 +146,7 @@ listing_details = ListingDetails.as_view()
 class Platform(View):
 
 	def post(self, request, *args, **kwargs):
-		print 'dbz got post'
+		print 'got post'
 		soup = BeautifulSoup(request.POST.get('<?xml version', None))
 		try:
 			agent_email = soup.find('email').text
@@ -244,7 +247,7 @@ def convert_to_platform(soup):
 		
 		title = soup.find('streetname')
 		if title:
-			listing.title = title
+			listing.title = title.text
 		else:
 			err = "Title is empty. Please fill it up in Street Name."
 			errors.append(err)
@@ -312,11 +315,13 @@ def convert_to_platform(soup):
 	
 		## lastupdate ##
 		listing.feed_lastupdated = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
+		
+		
 		## contactemail ##
 		email = soup.find('email')
 		if email:
 			listing.agent_email = email.text
+			listing.agent_name = email.text.split('@')[0]
 		else:
 			err = 'email is empty'
 			errors.append(err)

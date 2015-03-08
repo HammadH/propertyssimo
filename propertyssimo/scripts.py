@@ -46,14 +46,14 @@ def parse_platform_xml():
 				continue
 
 def parse_dbz_xml():
-	# try:
-	# 	response = requests.get(settings.DBZ_XML_LINK)
-	# except Exception, e:
-	# 	print e
-	# 	return
-	response = open('/home/dubizzle/ps.xml', 'r').read()
+	try:
+	 	response = requests.get(settings.DBZ_XML_LINK)
+	except Exception, e:
+	 	print e
+	 	return
+	#response = open('/home/dubizzle/ps.xml', 'r').read()
 	### response.content if getting from request
-	soup = BeautifulSoup(response)
+	soup = BeautifulSoup(response.content)
 	#################################
 	listings = soup.find_all('refno')
 	print "got %s listings" %len(listings)
@@ -86,13 +86,13 @@ def parse_dbz_xml():
 				continue
 
 def parse_pf_xml():
-	#try:
-	# 	response = requests.get(settings.PF_XML_LINK)
-	# except Exception, e:
-	# 	print e
-	# 	return
-	response = open('/home/dubizzle/pf.xml', 'r').read()
-	soup = BeautifulSoup(response)
+	try:
+	 	response = requests.get(settings.PF_XML_LINK)
+	except Exception, e:
+	 	print e
+	 	return
+	#response = open('/home/dubizzle/pf.xml', 'r').read()
+	soup = BeautifulSoup(response.content)
 	listings = soup.find_all('reference')
 	#### if listing not in xml; remove it ###
 	### get all active listings from db, then parse all listings in xml,

@@ -17,7 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
     <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
-
+    <link href="{% static 'assets/css/featured_listings.css' %}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -110,44 +110,60 @@
   <div class='container' style='margin-top:3%;'>
     <div class='row' style='background-color:;'>
         <div class='col-md-3'>
-            <h1>Why Propertyssimo?</h1>
-            <h3>Here's the reason why...</h3>
+            <h1></h1>
+            <h3></h3>
         </div>
         <div class='row'>
             <div class='row' style='padding:3%'>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
-            </div>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
-            </div>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
+                {% for listing in featured_listings %}
+                <div class="col-sm-4 col-md-4">
+            <div class="post">
+                <div class="post-img-content">
+                    <img src="{{listing.get_thumbnail_image}}" class="img-responsive" />
+                    <span class="post-title"><b>{{listing.title}}</b><br />
+                        <b>{{listing.price}}</b></span>
+                </div>
+                <div class="content">
+                    <div class="author">
+                        By <b>{{listing.agent_name}}</b> |
+                        <time datetime="2014-01-20">February 20th, 2015</time>
+                    </div>
+                    <div>
+                       {{listing.description}}
+                    </div>
+                    <div>
+                    <a href="{{listing.get_absolute_url}}" class="btn btn-warning btn-sm">Read more</a>
+                    </div>
+                </div>
             </div>
         </div>
+        {% endfor %}
+           
+        </div>
         <div class='row' style='padding:3%'>
-            <div class='col-md-3'></div>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
+           <div class="col-sm-4 col-md-4">
+            <div class="post">
+                <div class="post-img-content">
+                    <img src="http://placehold.it/460x250/e67e22/ffffff&text=HTML5" class="img-responsive" />
+                    <span class="post-title"><b>Make a Image Blur Effects With</b><br />
+                        <b>CSS3 Blur</b></span>
+                </div>
+                <div class="content">
+                    <div class="author">
+                        By <b>Bhaumik</b> |
+                        <time datetime="2014-01-20">January 20th, 2014</time>
+                    </div>
+                    <div>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                        unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </div>
+                    <div>
+                        <a href="http://www.jquery2dotnet.com/2014/01/jquery-highlight-table-row-and-column.html" class="btn btn-warning btn-sm">Read more</a>
+                    </div>
+                </div>
             </div>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
-            </div>
-            <div class='col-md-3'>
-                <img class="img-responsive" src="{% static 'assets/img/portfolio/port04.jpg' %}" alt="">
-                <h1>Why Propertyssimo?</h1>
-                <h3>Here's the reason why...</h3>
-            </div>
+        </div>
         </div>
     </div>
   </div>

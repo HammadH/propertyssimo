@@ -25,25 +25,26 @@ class Listing(models.Model):
 	city = models.CharField(max_length=75, blank=False, null=True)
 	type = models.CharField(max_length=75, blank=False, null=True)
 	subtype = models.CharField(max_length=75, blank=False, null=True)
-	commercialtype = models.CharField(max_length=75, blank=False, null=True)
+	commercialtype = models.CharField(max_length=75, blank=True, null=True)
 	refno = models.CharField(unique=True, max_length=75, blank=False, null=True)
 	title = models.CharField(max_length=225, blank=False, null=True)
 	description = models.TextField(blank=True, null=True)
-	size = models.CharField(max_length=75, blank=False, null=True)
+	size = models.CharField(max_length=75, blank=True, null=True)
 	price = models.CharField(max_length=75, blank=False, null=True)
-	bedrooms = models.CharField(max_length=75, blank=False, null=True)
-	feed_lastupdated = models.CharField(max_length=75, null=True)
+	bedrooms = models.CharField(max_length=75, blank=True, null=True)
+	feed_lastupdated = models.CharField(max_length=75, blank=True, null=True)
 	db_lastupdated = models.DateTimeField(null=True)
 	created_at = models.DateTimeField(auto_now_add=True)
-	location = models.CharField(max_length=75, blank=False, null=True)
-	building = models.CharField(max_length=75, blank=False, null=True)
-	bathrooms = models.CharField(max_length=75, blank=False, null=True)
-	amenities = models.CharField(max_length=75, blank=False, null=True)
+	location = models.CharField(max_length=75, blank=True, null=True)
+	building = models.CharField(max_length=75, blank=True, null=True)
+	bathrooms = models.CharField(max_length=75, blank=True, null=True)
+	amenities = models.CharField(max_length=75, blank=True, null=True)
 	photos = models.TextField(blank=True, null=True)
-	published_on_dbz = models.CharField(max_length=75, blank=False, null=True)
-	published_on_pf = models.CharField(max_length=75, blank=False, null=True)
-	published_on_bayut = models.CharField(max_length=75, blank=False, null=True)
-	is_furnished = models.CharField(max_length=75, blank=False, null=True)
+	published_on_dbz = models.CharField(max_length=75, blank=True, null=True)
+	published_on_pf = models.CharField(max_length=75, blank=True, null=True)
+	published_on_bayut = models.CharField(max_length=75, blank=True, null=True)
+	is_furnished = models.CharField(max_length=75, blank=True, null=True)
+	is_featured = models.BooleanField(blank=True, default=False, null=False)
 	
 
 	def __unicode__(self):
@@ -106,72 +107,76 @@ class Listing(models.Model):
 
 	def create_or_update_from_pf_xml(self, soup):
 		self.status = 1
-		self.agent_email = soup.agent_email.text
-		self.agent_name = soup.agent_name.text
-		self.agent_mobile = soup.agent_phone.text
+		self.agent_email = soup.agent.email.text.strip()
+		self.agent_name = soup.agent.find('name').text.strip()
+		self.agent_mobile = soup.agent.phone.text.strip()
 		self.city = soup.city.text
 		#converting type and subtype to dbz format
-		category = soup.category.text
-		type = soup.type.text
-		if category == 'Residential for Rent':
+		category = soup.offering_type.text.strip()
+		type = soup.property_type.text.strip()
+		if category == 'RR':
 			self.type = 'RP'
-			if type == 'Apartment':
+			if type == 'AP':
 				self.subtype = 'AP'
-			elif type == 'Villa':
+			elif type == 'VH':
 				self.subtype = 'VI'
-		elif category == 'Residential for Sale':
+		elif category == 'RS':
 			self.type = 'SP'
-			if type == 'Apartment':
+			if type == 'AP':
 				self.subtype = 'AP'
-			elif type == 'Villa':
+			elif type == 'VH':
 				self.subtype = 'VI'
-		elif category == 'Commercial for Rent':
+		elif category == 'CR':
 			self.type = 'RP'
 			self.subtype = 'CO'
-			if type == 'Office Space':
+			if type == 'OF':
 				self.commercialtype = 'OF'
-			elif type == 'Retail':
+			elif type == 'RE':
 				self.commercialtype = 'RE'
-			elif type == 'Staff Accommodation':
+			elif type == 'ST':
 				self.commercialtype = 'ST'
-			elif type == 'Warehouse' or type == 'Factory':
+			elif type == 'WH':
 				self.commercialtype = 'IN'
-		elif category == 'Commercial for Sale':
+		elif category == 'CS':
 			self.type = 'SP'
 			self.subtype = 'CO'
-			if type == 'Office Space':
+			if type == 'OF':
 				self.commercialtype = 'OF'
-			elif type == 'Retail':
+			elif type == 'RE':
 				self.commercialtype = 'RE'
-			elif type == 'Staff Accommodation':
+			elif type == 'ST':
 				self.commercialtype = 'ST'
-			elif type == 'Warehouse' or type == 'Factory':
+			elif type == 'WH':
 				self.commercialtype = 'IN'
-		self.refno = soup.reference.text
-		self.title = soup.title_en.text
-		self.description = soup.description_en.text
-		self.size = soup.sqft.text if soup.sqft else None
-		self.price = soup.price.text
+		self.refno = soup.reference_number.text.strip()
+		self.title = soup.title_en.text.strip()
+		self.description = soup.description_en.text.strip()
+		self.size = soup.size.text.strip() if soup.size else None
+		self.price = soup.price.text.strip()
 		if soup.bedroom:
-			if soup.bedroom.text == 'studio':
+			if soup.bedroom.text.strip() == 'studio':
 				self.bedrooms = 0
 			else:
-				self.bedrooms = soup.bedroom.text
+				self.bedrooms = soup.bedroom.text.strip()
 		#parse lastupdate and convert to datetime
 		# self.feed_lastupdated = soup.lastupdated.text
-		self.location = soup.community.text if soup.community else None
-		self.building = soup.property.text if soup.property else None
+		self.location = soup.community.text.strip() if soup.community else None
+		self.building = soup.property_name.text.strip() if soup.property_name else None
 		if soup.bathroom:
-			self.bathrooms = soup.bathroom.text
+			self.bathrooms = soup.bathroom.text.strip()
 		# if soup.amenities:
 		# 	self.amenities = parse_dbz_amenities(soup.amenities.text)
 
-		photos = soup.findAll(re.compile('photo_url'))
+		photos = soup.photo
 		if photos:
+			_photos = []
+			for i in photos.contents:
+				if i != '\n':
+					_photos.append(i.string.strip())
 			self.photos = ''
-			for key,photo in enumerate(photos):
-				self.photos += photo.text.strip('\n\n')
-				if (key+1) < len(photos):
+			for key,photo in enumerate(_photos):
+				self.photos += photo
+				if (key+1) < len(_photos):
 					self.photos += '|'
 		return self
 

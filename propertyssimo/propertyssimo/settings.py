@@ -59,8 +59,8 @@ WSGI_APPLICATION = 'propertyssimo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'propertyssimo',
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME':'propertyssimo',
 	'USER':'propertyssimo',
 	'PASSWORD':'propertyssimo',
 	'HOST':'127.0.0.1',
@@ -92,7 +92,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
 DBZ_XML_LINK = 'http://prop-pix.com/cms/issmo_dbz/live/'
-PF_XML_LINK = 'http://prop-pix.com/cms/issmo_pf/live_v2/'
+PF_XML_LINK = 'http://prop-pix.com/cms/issmo_pf/live/'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -93,7 +93,7 @@ def parse_pf_xml():
 	 	return
 	#response = open('/home/dubizzle/pf.xml', 'r').read()
 	soup = BeautifulSoup(response.content)
-	listings = soup.find_all('reference')
+	listings = soup.find_all('reference_number')
 	#### if listing not in xml; remove it ###
 	### get all active listings from db, then parse all listings in xml,
 	## the difference listings are the ones deleted from xml 
@@ -125,6 +125,3 @@ def parse_pf_xml():
 		print "deleting %s" %listing.refno
 		listing.published_on_pf = 'False'
 		listing.delete()
-
-
-

@@ -509,76 +509,24 @@ h1, h2, h3, h4, h5, h6 {
 	.widget-simplenav a{ margin:0 5px; }
 
 
-	.navbar-default {
-  background-color: #f56f00;
-  border-color: #0e3695;
-}
-.navbar-default .navbar-brand {
-  color: #ffffff;
-}
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #ecdbff;
-}
-.navbar-default .navbar-text {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #ecdbff;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #f56f00;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #ecdbff;
-  background-color: #0e3695;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
-  background-color: #f56f00;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #ecdbff;
-  background-color: #0e3695;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #ecdbff;
-  background-color: #0e3695;
-}
-.navbar-default .navbar-toggle {
-  border-color: #0e3695;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #0e3695;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #ffffff;
-}
-.navbar-default .navbar-link {
-  color: #ffffff;
-}
-.navbar-default .navbar-link:hover {
-  color: #ecdbff;
-}
+.navbar-inverse { background-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #FF8112}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #FF8112}
+.dropdown-menu { background-color: #FFFFFF}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #FF8112}
+.navbar-inverse { background-image: none; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
+.navbar-inverse { border-color: #FFFFFF}
+.navbar-inverse .navbar-brand { color: #999999}
+.navbar-inverse .navbar-brand:hover { color: #A8A8A8}
+.navbar-inverse .navbar-nav>li>a { color: #999999}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #FFFFFF}
+.dropdown-menu>li>a { color: #999999}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-top-color: #999999}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #999999}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
 
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffffff;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ecdbff;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #ecdbff;
-    background-color: #0e3695;
-  }
-}

@@ -17,7 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
     <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/css/featured_listings.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/carousel.css' %}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -28,48 +28,44 @@
 
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/carousel.js' %}"></script>
   </head>
 
   <body>
     <!-- top header -->
-    <div class='container'>
+    <div class='container' style='margin-top:-35px;'>
     <nav class="navbar">
         <div class="container-fluid">
-        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-linkedin fa-2"></i></p>
-        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-twitter fa-2"></i></p>
-        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-facebook fa-2"></i></p>
+           <a class="navbar-brand" href="/">
+            <img class="img-responsive" src="{% static 'assets/img/nl.png' %}" style='margin-left:100px;' >
+          </a>
+        <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-linkedin fa-2"></i></p>
+        <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-twitter fa-2"></i></p>
+        <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-facebook fa-2"></i></p>
         <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-skype fa-2"></i><small> propertyssimo</small></p>
         <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-phone fa-2"></i> <small>+971552929237</small></p>
       </div>
     </nav>
 <nav class="nav nav-pills">
         <div class="container-fluid">
-        <div class="navbar-header" style='margin-top:-65px;'>
-          <a class="navbar-brand" href="#">
-            <img class="img-responsive" src="{% static 'assets/img/nl.png' %}" >
-          </a>
-
-        </div>
-      
-        
         <ul class="nav nav-pills pull-right">
-             <li role="presentation" class="" style="background: white;"><a href="#" style='color:#777;'>HOME</a></li>
-             <li role="presentation"><a href="#" class="navbar-link"  style='color:#777;'>ABOUT US</a></p></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>SERVICES</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>ADVICE</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>BLOG</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>EVENTS</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>CAREERS</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>CONTACT US</a></li>
+             <li role="presentation"><a href="#" style='color:#0e3695;'>HOME</a></li>
+             <li role="presentation"><a href="#" class="navbar-link"  style='color:#0e3695;'>ABOUT US</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>SERVICES</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>ADVICE</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>BLOG</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>EVENTS</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>CAREERS</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>CONTACT US</a></li>
         </ul>
         
         
       </div>
 </nav>
 </div>
-<nav class="navbar navbar-default" style='margin:0px;'>
+<nav class="navbar navbar-inverse" style='margin:0px;'>
   <div class="container">
 
    
@@ -90,86 +86,86 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn" style='background:#0e3695;color:white;'>Submit</button>
+        <button type="submit" class="btn" style='background:#FF8112;color:white;'>Submit</button>
       </form>
      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div id="headerwrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <h1>Welcome to PROPERTYSSIMO</h1>
-                    
-                </div>
-            </div><! --/row -->
-        </div><! --/container -->
-    </div><! --/headerwrap -->
+
   
   <div class='container' style='margin-top:3%;'>
-    <div class='row' style='background-color:;'>
-        <div class='col-md-3'>
-            <h1></h1>
-            <h3></h3>
-        </div>
-        <div class='row'>
-            <div class='row' style='padding:3%'>
-                {% for listing in featured_listings %}
-                <div class="col-sm-4 col-md-4">
-            <div class="post">
-                <div class="post-img-content">
-                    <img src="{{listing.get_thumbnail_image}}" class="img-responsive" />
-                    <span class="post-title"><b>{{listing.title}}</b><br />
-                        <b>{{listing.price}}</b></span>
-                </div>
-                <div class="content">
-                    <div class="author">
-                        By <b>{{listing.agent_name}}</b> |
-                        <time datetime="2014-01-20">February 20th, 2015</time>
-                    </div>
-                    <div>
-                       {{listing.description}}
-                    </div>
-                    <div>
-                    <a href="{{listing.get_absolute_url}}" class="btn btn-warning btn-sm">Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-           
-        </div>
-        <div class='row' style='padding:3%'>
-           <div class="col-sm-4 col-md-4">
-            <div class="post">
-                <div class="post-img-content">
-                    <img src="http://placehold.it/460x250/e67e22/ffffff&text=HTML5" class="img-responsive" />
-                    <span class="post-title"><b>Make a Image Blur Effects With</b><br />
-                        <b>CSS3 Blur</b></span>
-                </div>
-                <div class="content">
-                    <div class="author">
-                        By <b>Bhaumik</b> |
-                        <time datetime="2014-01-20">January 20th, 2014</time>
-                    </div>
-                    <div>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                        unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </div>
-                    <div>
-                        <a href="http://www.jquery2dotnet.com/2014/01/jquery-highlight-table-row-and-column.html" class="btn btn-warning btn-sm">Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
-  </div>
-</div>
 
-<footer id="footer" class="top-space">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+      
+        <div class="item active">
+            {% with featured_listings.0 as listing %}
+          <img src="{% static 'assets/img/image2.jpg' %}">
+           <div class="carousel-caption">
+            <h4><a href="#">Lorem ipsum dolor sit amet consetetur sadipscing</a></h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="#" target="_blank">ssimo carousel</a></p>
+          </div>
+        </div><!-- End Item -->
+            {% endwith %}
+         <div class="item">
+          <img src="{% static 'assets/img/image3.jpg' %}">
+           <div class="carousel-caption">
+            <h4><a href="#">consetetur sadipscing elitr, sed diam nonumy eirmod</a></h4>
+             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="#" target="_blank">ssimo carousel</a></p>
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src="{% static 'assets/img/image4.jpg' %}">
+           <div class="carousel-caption">
+            <h4><a href="#">tempor invidunt ut labore et dolore</a></h4>
+             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="#" target="_blank">ssimo carousel</a></p>
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src="{% static 'assets/img/image5.jpg' %}">
+           <div class="carousel-caption">
+            <h4><a href="#">magna aliquyam erat, sed diam voluptua</a></h4>
+             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="#" target="_blank">ssimo carousel</a></p>
+          </div>
+        </div><!-- End Item -->
+
+        <div class="item">
+          <img src="{% static 'assets/img/image6.jpg' %}">
+           <div class="carousel-caption">
+             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="#" target="_blank">ssimo carousel</a></p>
+          </div>
+        </div><!-- End Item -->
+                
+      </div><!-- End Carousel Inner -->
+
+
+    <ul class="list-group col-sm-4">
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h4>Lorem ipsum dolor sit amet consetetur sadipscing</h4></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>consetetur sadipscing elitr, sed diam nonumy eirmod</h4></li>
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>tempor invidunt ut labore et dolore</h4></li>
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>magna aliquyam erat, sed diam voluptua</h4></li>
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>tempor invidunt ut labore et dolore magna aliquyam erat</h4></li>
+    </ul>
+
+      <!-- Controls -->
+      <div class="carousel-controls">
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+      </div>
+
+    </div><!-- End Carousel -->
+    </div>
+
+<footer id="footer" class="top-space" style='margin-top:100px'>
 
         <div class="footer1">
             <div class="container">
@@ -178,16 +174,16 @@
                     <div class="col-md-3 widget">
                         <h3 class="widget-title">Contact</h3>
                         <div class="widget-body">
-                            <p>+234 23 9873237<br>
-                                <a href="mailto:#">some.email@somewhere.com</a><br>
+                            <p>+971552929237<br>
+                                <a href="mailto:#">contact@propertyssimo.com</a><br>
                                 <br>
-                                234 Hidden Pond Road, Ashland City, TN 37015
+                                Concorde Tower, Dubai Media City
                             </p>    
                         </div>
                     </div>
 
                     <div class="col-md-3 widget">
-                        <h3 class="widget-title">Follow me</h3>
+                        <h3 class="widget-title">Follow us</h3>
                         <div class="widget-body">
                             <p class="follow-me-icons">
                                 <a href=""><i class="fa fa-twitter fa-2"></i></a>
@@ -199,7 +195,7 @@
                     </div>
 
                     <div class="col-md-6 widget">
-                        <h3 class="widget-title">Text widget</h3>
+                        <h3 class="widget-title">Propertyssimo</h3>
                         <div class="widget-body">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
                             <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>

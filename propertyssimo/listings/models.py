@@ -192,7 +192,12 @@ class Listing(models.Model):
 	def get_agent_shortname(self):
 		return self.agent_name.strip().split(' ')[0]
 
-
+	def get_price(self):
+		try:
+			return "AED " + format(int(self.price), ",d")
+		except Exception, e:
+			print e
+			return None
 
 
 

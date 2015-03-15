@@ -163,7 +163,7 @@
   	{% for listing in listings %}
     <tr class='clickable' data-url='{{listing.get_absolute_url}}' style='cursor:pointer'>
       <td><img src="{{listing.get_thumbnail_image}}"  style='width:150px;height:100px;'></td>
-      <td>{{listing}}</td>
+      <td>{{listing}}<br><span class='badge'>{{listing.get_price}}</span></td>
       {% if listing.type == "SP" %}
       <td>Sale</td>
       {% elif listing.type == "RP" %}
@@ -177,7 +177,11 @@
      {% elif listing.subtype == "CO" %}
      <td>Commercial</td>
      {% endif %}
+     {% if listing.bedrooms == '0' %}
+     <td>Studio</td>
+     {% else %}
      <td>{{listing.bedrooms}}</td>
+     {% endif %}
      <td>{{listing.location}}</td>
      <td>{{listing.building}}</td>
      <td>{{listing.agent_name}}<br>

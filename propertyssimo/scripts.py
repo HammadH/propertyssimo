@@ -84,7 +84,8 @@ def parse_dbz_xml():
 				new_listing.published_on_dbz = 'True'
 				try:
 					new_listing.save()
-				except IntegrityError:
+				except Exception, e:
+					print e
 					pass
 				continue
 
@@ -122,7 +123,8 @@ def parse_pf_xml():
 			new_listing.published_on_pf = 'True'
 			try:
 				new_listing.save()
-			except IntegrityError:
+			except Exception, e:
+				print e
 				pass
 			continue
 	

@@ -82,7 +82,10 @@ def parse_dbz_xml():
 				new_listing = Listing().create_or_update_from_dbz_xml(listing)
 				new_listing.created_at = datetime.datetime.now()
 				new_listing.published_on_dbz = 'True'
-				new_listing.save()
+				try:
+					new_listing.save()
+				except IntegrityError:
+					pass
 				continue
 
 def parse_pf_xml():
@@ -117,7 +120,10 @@ def parse_pf_xml():
 			new_listing = Listing().create_or_update_from_pf_xml(listing)
 			new_listing.created_at = datetime.datetime.now()
 			new_listing.published_on_pf = 'True'
-			new_listing.save()
+			try:
+				new_listing.save()
+			except IntegrityError:
+				pass
 			continue
 	
 	listings_to_delete = [listing for listing in listings_in_db if listing not in listings_in_xml]

@@ -2,7 +2,14 @@
 {% load staticfiles %}
 
 {% block assets %} 
+ <script>
+    $(document).ready(function(){
+      $('.clickable').click(function(){
+        window.document.location = $(this).data('url')
+      });
 
+    });
+    </script>
 {% endblock %}
 
 {% block main %}

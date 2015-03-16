@@ -107,7 +107,7 @@ def parse_pf_xml():
 	print "got %s listings" %len(listings)
 	for refno_tag in listings:
 		listing = refno_tag.parent
-		reference = refno_tag.text
+		reference = refno_tag.text.strip()
 		try:
 			existing_listing = Listing.objects.get(refno=reference)
 			print "found existing %s" %reference

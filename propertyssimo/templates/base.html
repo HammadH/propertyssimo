@@ -1,0 +1,213 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'assets/img/nl.png' %}">
+
+    <title>Propertyssimo - World Class Real Estate Agency</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/carousel.css' %}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    
+  </head>
+
+  <body>
+
+    <div class="container" style='margin-top:;'>
+      <div class='row'>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-8'>
+         
+    <nav class="nav nav-pills" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav nav-pills">
+      <li style='margin-right:3px;'><a href="#">Dubai Marina</a></li>
+      <li style='margin-right:3px;'><a href="#">Palm Jumeirah</a></li>
+      <li style='margin-right:3px;'><a href="#">Downtown</a></li>
+      <li style='margin-right:3px;'><a href="#">JBR</a></li>
+      <li style='margin-right:3px;'><a href="#">All Neighbourhoods</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+ </div>
+
+        <div class='col-sm-2'></div>
+     
+    
+ </div>
+<div class="container">
+
+
+    <nav class="navbar">
+        <div class="container-fluid">
+           <a class="navbar-brand" href="/">
+            <img class="img-responsive" src="{% static 'assets/img/nl.png' %}">
+          </a>
+        <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-linkedin fa-2"></i></p>
+        <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-twitter fa-2"></i></p>
+        <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-facebook fa-2"></i></p>
+        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-skype fa-2"></i><small> propertyssimo</small></p>
+        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-phone fa-2"></i> <small>+971 4 277 6321</small></p>
+      </div>
+    </nav>
+<nav class="nav nav-pills">
+        <div class="container-fluid">
+        <ul class="nav nav-pills pull-right">
+             <li role="presentation"><a href="#" style='color:#0e3695;'>HOME</a></li>
+             <li role="presentation"><a href="#" class="navbar-link"  style='color:#0e3695;'>ABOUT US</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>SERVICES</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>ADVICE</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>BLOG</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>EVENTS</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>CAREERS</a></li>
+             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>CONTACT US</a></li>
+        </ul>
+        
+        
+      </div>
+</nav>
+</div>
+
+<nav class="navbar navbar-inverse" style='margin:0px;'>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       
+      <ul class="nav navbar-nav">
+
+        <li class="active"><a href="#">Investors <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Selling</a></li>
+        <li><a href="#">Buying</a></li>
+        <li><a href="#">Landlords</a></li>
+        <li><a href="#">Letting</a></li>
+        <li><a href="#">Vacational Rentals</a></li>
+        <li><a href="#">New Developments</a></li>
+        
+      </ul>
+   <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn" style='background:#FF8112;color:white;'>Submit</button>
+      </form>
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    
+{% block main %}
+
+{% endblock %}
+
+<footer id="footer" class="top-space" style='margin-top:100px'>
+
+        <div class="footer1">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-md-3 widget">
+                        <h3 class="widget-title">Contact</h3>
+                        <div class="widget-body">
+                            <p>+971 4 277 6321<br>
+                                <a href="mailto:#">contact@propertyssimo.com</a><br>
+                                <br>
+                                Office 3302,<br>
+                                Concorde Tower,<br>
+                                Dubai Media City
+                            </p>    
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 widget">
+                        <h3 class="widget-title">Follow us</h3>
+                        <div class="widget-body">
+                            <p class="follow-me-icons">
+                                <a href=""><i class="fa fa-twitter fa-2"></i></a>
+                                <a href=""><i class="fa fa-dribbble fa-2"></i></a>
+                                <a href=""><i class="fa fa-github fa-2"></i></a>
+                                <a href=""><i class="fa fa-facebook fa-2"></i></a>
+                            </p>    
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 widget">
+                        <h3 class="widget-title">Propertyssimo</h3>
+                        <div class="widget-body">
+                            </p>Propertyssimo Real Estate has recently launched our new approach and 
+integrated the latest technologies into business of real estate. Supported with 
+highly trained, dedicated, classy team of professionals, prioritizing the interests 
+of our Clientelle Exclusively, we are here to nurture your comfort and success.</p> 
+</p>Being a former AJ Real Estate, established in 2003 we have grown and learned 
+following the strategy of UAE Leaders, combined with international expertise 
+and practice. The world goes further, so we do.</p> 
+<p>We have earned respect of hundreds investors worldwide, who stay with us for 
+years, refer the family members, associates and friends. The appreciation and 
+gratitude of our clients motivate each member of Propertyssimo family to strike 
+the best deals.</p> 
+<p>Whether you are an individual or corporate client, and no matter how big or 
+small your goals are, our industry-leading expertise in all aspects or real estate 
+makes Propertyssimo the first place to turn for success.</p>
+                        </div>
+                    </div>
+
+                </div> <!-- /row of widgets -->
+            </div>
+        </div>
+
+        <div class="footer2">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-md-6 widget">
+                        <div class="widget-body">
+                            <p class="simplenav">
+                                <a href="#">Home</a> | 
+                                <a href="about.html">About</a> |
+                                <a href="sidebar-right.html">Sidebar</a> |
+                                <a href="contact.html">Contact</a> |
+                                <b><a href="signup.html">Sign up</a></b>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 widget">
+                        <div class="widget-body">
+                            <p class="text-right">
+                                
+                            </p>
+                        </div>
+                    </div>
+
+                </div> <!-- /row of widgets -->
+            </div>
+        </div>
+
+    </footer>   
+  </body>
+
+</html>

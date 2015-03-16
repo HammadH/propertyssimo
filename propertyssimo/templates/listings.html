@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block assets %} 
+
+{% endblock %}
+
 {% block main %}
 
 <nav class="navbar navbar-default">
@@ -62,10 +66,17 @@
           <option value="True">Yes</option>
           <option value="No">No</option>
       </select>
-          <input type="text" name='search' class="form-control" style='margin-left:25px; padding-right:110px;' placeholder="Search">
+       <input type="text" name='min_price' class="form-control" style='margin-left:10px;' placeholder="Min Price">
+      <input type="text" name='max_price' class="form-control" style='margin-left:10px;' placeholder="Max Price">
+          <div class='row' style='margin-top:25px;' >
+            <div class='col-lg-3'></div>
+            <div class='col-lg-6'>
+          <input type="text" name='search' class="form-control pull" style=' padding-right:210px;' placeholder="Search">
+           <button type="submit" class="btn" style='background:#0e3695;color:white;'>Submit</button>
         </div>
-        <button type="submit" class="btn" style='background:#0e3695;color:white;'>Submit</button>
+        <div class='col-lg-3'></div>
       </form>
+      </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

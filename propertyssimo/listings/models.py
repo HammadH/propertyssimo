@@ -31,6 +31,7 @@ class Listing(models.Model):
 	description = models.TextField(blank=True, null=True)
 	size = models.CharField(max_length=75, blank=True, null=True)
 	price = models.CharField(max_length=75, blank=False, null=True)
+	_price = models.IntegerField(blank=False, null=True)
 	bedrooms = models.CharField(max_length=75, blank=True, null=True)
 	feed_lastupdated = models.CharField(max_length=75, blank=True, null=True)
 	db_lastupdated = models.DateTimeField(null=True)
@@ -52,6 +53,7 @@ class Listing(models.Model):
 
 	def save(self, *args, **kwargs):
 		self.db_lastupdated = datetime.datetime.now()
+		self._price = int(self.price)
 		super(Listing, self).save(*args, **kwargs)
 
 	def delete(self, *args, **kwargs):

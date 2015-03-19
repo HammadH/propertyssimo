@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block nav %}
+<nav class="navbar navbar-inverse" style='margin:0px;'>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       
+      <ul class="nav navbar-nav">
+
+        <li><a href="#">Investors</a></li>
+        <li><a href="{% url 'selling' %}">Selling</a></li>
+        <li class="active"><a href="{% url 'buyers' %}">Buying <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Landlords</a></li>
+        <li><a href="#">Letting</a></li>
+        <li><a href="#">Vacational Rentals</a></li>
+        <li><a href="#">New Developments</a></li>
+        
+      </ul>
+   <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn" style='background:#FF8112;color:white;'>Submit</button>
+      </form>
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+{% endblock %}
+
+{% block main %}
+
+<img src = "{% static 'assets/img/buying_1.jpg' %}" class='img-responsive'/>
+
+<div class='container'  >
+	<div class='row' style='margin:20px;'>
+	
+		
+<div class='row' style='margin:20px;'>
+  <h1 class='text-center'>Buyer Services</h1><br/><br/>
+  <h2>Ready to buy? We can help!</h2>
+  <p>Whether your upcoming investment represents a threshold-crossing life transition or a strategic acquisition, Propertyssimo  can create a plan to suit your needs and personality. Our agents are highly experienced in navigating the maze of today's market from start to finish, including property identification, lending options, negotiations, and final closing.</p><br/>
+  
+ <h2>Propertyssimo Buyer services include:</h2>
+ <div class='col-lg-5' style='padding:15px;'>
+ 	<div class='row'>
+	<h3>Technology</h3>
+	<p>We live in the heart of the high-tech world, and use the most current and evolved technology to stay informed about the market and manage your purchase. We connect through your preferred technology to ease the communication process and match your lifestyle. And, when you need some good old fashioned face time, we'll happily oblige.</p>
+	</div>
+	<div class='row'>
+	<h3>Inspection Assistance</h3> 
+	<p>Any property is worth a closer look. Your Propretyssimo agent will provide a list of qualified property inspectors, and attend inspections with you. If the inspections reveal items that require correction, your agent will advise as to whether or not it may be possible to obtain credits or repairs.</p>
+	</div>
+	<div class='row'>
+	<h3>Closing Assistance</h3>
+	<p>We'll handle entire process to ensure a smooth experience. And when it's time to sign closing papers, your agent will be available to handle any last minute details.</p>
+	</div> 
+</div>
+<div class='col-lg-1'></div>
+<div class='col-lg-5' style='padding:15px;'>
+	<div class='row'>
+<h3>Local Connections</h3>
+<p>We get Dubai. We live here. Propertyssimo agents help you figure out which price ranges, neighborhoods and property types best fit your needs. When it's time to make an offer, we'll provide unrivaled guidance, detailed market information and analysis to help you close the best deal.</p>
+</div>
+<div class='row'>
+<h3>Personal Guidance</h3>
+<p>Think of us as your private concierge. Your Propertyssimo agent will help you review disclosure documentation for the properties you like, and establish the right offer price and terms. We will then present your offer in the most favorable light.</p>
+</div>
+</div>
+</div>
+</div>
+
+ <div class='row' style='margin:20px;'>
+  <iframe src="http://wikimapia.org/#lang=en&lat=25.139069&lon=55.320282&z=11&m=m" frameborder="0" height="400px" width="1100" scrolling="no"></iframe>
+ </div>
+
+ <div class='row' style='margin:20px;'>
+ 	<h1>Financing</h1>
+ 	<p>Dubai is a wonderful and unique city, with vast diversity in population and housing options. With so many types of properties on the market, a local lending specialist is a necessity. You need someone who is intimately familiar with loan-to-value tolerances for each type of property, market and construction changes, and the types of documentation required from both buyers and sellers.</p>
+
+	<p>Propertyssimo provides one-stop shopping in real estate. We want to make sure your transaction closes smoothly and on-time. To make sure this happens we work with the best in the business. You'll see the difference when your real estate agent and lender work as a team.</p>
+</div>
+
+ <div class='row' style='margin:20px;'>
+ 	<h1>Get Pre-Approved</h1>
+ 	<p>We recommend that before you begin house hunting, you begin the loan pre-approval process. This gives you the advantages that you'll know exactly what price range to look in and a seller will take your offer more seriously.</p>
+ 
+ <div class='row text-center' style='margin:40px;'>
+  <button class='btn btn-lg btn-danger'>Get Pre-Approved</button>
+</div>
+
+</div>
+
+
+ </div>
+
+{% endblock %}

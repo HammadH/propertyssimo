@@ -9,3 +9,10 @@ class Landing(View):
 		return render_to_response('landing.html', {'featured_listings':featured_listings})
 
 
+class Buyers(View):
+	def get(self, request, *args, **kwargs):
+		return render_to_response('buyers.html')
+
+class Selling(View):
+	def get(self, request, *args, **kwargs):
+		return render_to_response('selling.html')

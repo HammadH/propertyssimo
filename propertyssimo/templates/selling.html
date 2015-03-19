@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block nav %}
+<nav class="navbar navbar-inverse" style='margin:0px;'>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       
+      <ul class="nav navbar-nav">
+
+        <li><a href="#">Investors</a></li>
+        <li class="active"><a href="{% url 'selling' %}">Selling <span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'buyers' %}">Buying</a></li>
+        <li><a href="#">Landlords</a></li>
+        <li><a href="#">Letting</a></li>
+        <li><a href="#">Vacational Rentals</a></li>
+        <li><a href="#">New Developments</a></li>
+        
+      </ul>
+   <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn" style='background:#FF8112;color:white;'>Submit</button>
+      </form>
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+{% endblock %}
+
+{% block main %}
+
+<div class='row'>
+  
+  </div>
+
+{% endblock %}

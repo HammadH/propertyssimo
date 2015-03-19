@@ -10,6 +10,8 @@ import views
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', views.Landing.as_view(), name='home'),
+    url(r'^buying/$', views.Buyers.as_view(), name='buyers'),
+    url(r'^selling/$', views.Selling.as_view(), name='selling'),
     url(r'^properties/$', 'listings.views.show_listings', name='show_listings'),
     url(r'^property/(?P<id>\d+)$', 'listings.views.listing_details', name='listing_details'),
     url(r'^properties/create/$', csrf_exempt(listing_views.Platform.as_view()), name='create_listing'),

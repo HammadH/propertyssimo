@@ -68,20 +68,22 @@
           <option value="1">Active</option>
           <option value="0">Sold</option>
       </select>
-      <select name='published' class='form-control'>
-          <option value="">Published on Portals</option>
-          <option value="True">Yes</option>
-          <option value="No">No</option>
+      <select name='area' class='form-control'>
+          <option value="">Area</option>
+          {% for option in area_options %}
+          <option value="{{option}}">{{option}}</option>
+          {% endfor %}
       </select>
-       <input type="text" name='min_price' class="form-control" style='margin-left:10px;' placeholder="Min Price">
-      <input type="text" name='max_price' class="form-control" style='margin-left:10px;' placeholder="Max Price">
+       
           <div class='row' style='margin-top:25px;' >
-            <div class='col-lg-3'></div>
-            <div class='col-lg-6'>
+            <div class='col-lg-2'></div>
+            <div class='col-lg-8'>
+              <input type="text" name='min_price' class="form-control" style='margin:10px;' placeholder="Min Price">
+      <input type="text" name='max_price' class="form-control" style='margin:10px;' placeholder="Max Price">
           <input type="text" name='search' class="form-control pull" style=' padding-right:210px;' placeholder="Search">
            <button type="submit" class="btn" style='background:#0e3695;color:white;'>Submit</button>
         </div>
-        <div class='col-lg-3'></div>
+        <div class='col-lg-2'></div>
       </form>
       </div>
     </div><!-- /.navbar-collapse -->
@@ -139,6 +141,8 @@
       </tr>
 {% endfor %}
 </table>
+</div>
+</div>
 </div>
 
 {% endblock %}

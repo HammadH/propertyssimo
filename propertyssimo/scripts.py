@@ -1,3 +1,6 @@
+import os, django
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'propertyssimo.settings')
+django.setup()
 import requests
 import datetime
 
@@ -133,3 +136,6 @@ def parse_pf_xml():
 		print "deleting %s" %listing.refno
 		listing.published_on_pf = 'False'
 		listing.delete()
+
+parse_dbz_xml()
+parse_pf_xml()

@@ -12,12 +12,13 @@
     <title>Propertyssimo - World Class Real Estate Agency</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/css/carousel.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/css/news_carousel.css' %}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -68,12 +69,13 @@
     <nav class="navbar">
         <div class="container-fluid">
            <a class="navbar-brand" href="/">
-            <img class="img-responsive" src="{% static 'assets/img/nl.png' %}">
+            <img class="img-responsive" src="{% static 'assets/img/nl.png' %}" >
           </a>
         <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-linkedin fa-2"></i></p>
         <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-twitter fa-2"></i></p>
         <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-facebook fa-2"></i></p>
-        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-skype fa-2"></i><small> propertyssimo</small></p>
+       
+       <a href="mailto:contact@propertyssimo.com"><p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-envelope-o fa-2"></i> <small>contact@propertyssimo.com</small></p></a>
         <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-phone fa-2"></i> <small>+971 4 277 6321</small></p>
       </div>
     </nav>
@@ -109,7 +111,7 @@
                         <h3 class="widget-title">Contact</h3>
                         <div class="widget-body">
                             <p>+971 4 277 6321<br>
-                                <a href="mailto:#">contact@propertyssimo.com</a><br>
+                               <i class="fa fa-skype fa-2"></i>propertyssimo
                                 <br>
                                 Office 3302,<br>
                                 Concorde Tower,<br>

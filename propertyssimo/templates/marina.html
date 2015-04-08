@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block assets %}
+ <link href="{% static 'assets/css/site_listings.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block main %}
+{% if area == 'jbr' %}
+<img src="{% static 'assets/img/jbr_cover.jpg' %}" style='width:100%;height:80%;'/>
+{% elif area == 'marina' %}
+<img src="{% static 'assets/img/marina_cover.jpg' %}" style='width:100%;height:80%;'/>
+{% elif area == 'dubai' %}
+
+{% elif area == 'palm' %}
+
+{% elif area == 'downtown' %}
+
+{% endif %}
+
+
+<div class="row" style='margin-top:80px'>
+    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+    <!-- <div class="absolute-wrapper"> </div> -->
+    <!-- Menu -->
+<div class='col-lg-2' style='margin-left:; padding:25px'>
+    <h3>Filter your search</h3>
+    <!-- Main Menu -->
+        <ul class="nav navbar-nav " id='viewdetails'>
+            <form class="navbar-form " role="search" method="GET">
+        <div class="form-group">
+            <li style='margin:10px;'><select name='type' class='form-control'>
+                <option value="">Rent/Sale</option>
+                <option value="RP">Rent</option>
+                <option value="SP">Sale</option>
+            </select></li>
+            <li style='margin:10px;'><select name='subtype' class='form-control'>
+                <option value="">Apartment/Villa</option>
+                <option value="AP">Apartment</option>
+                <option value="VI">Villa</option>
+                <option value="CO-OF">Office</option>
+                <option value="CO-RE">Retail</option>
+                <option value="CO-ST">Staff Acc.</option>
+                <option value="CO-IN">Industrial</option>
+            </select></li>
+            <li style='margin:10px;'><select name='br' class='form-control'>
+                <option value="">Bedrooms</option>
+                <option value="0">Studio</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+            </select></li>
+          <li style='margin:10px;'>  <select name='area'  style='width:90%;' class='form-control'>
+          <option value="">Area</option>
+          {% for option in area_options %}
+          <option value="{{option}}">{{option}}</option>
+          {% endfor %}
+      </select></li>
+      <li style='margin:10px'><input type="text" name='min_price' class="form-control" style='width:90%;' placeholder="Min Price"></li>
+       <li style='margin:10px'><input type="text" name='max_price' class="form-control" style='width:90%;' placeholder="Max Price"></li>
+       <button type='submit' class='btn btn-primary' style='margin:25px;background:none;color:grey;'>Search</button>
+        </div> 
+        </ul>
+    </div><!-- /.navbar-collapse -->
+
+    
+
+
+    <!-- Main Content -->
+   
+       <div class='col-lg-10'>
+                   <div class='row'>
+                <div class='col-sm-6'>
+           <h1 style='padding:25px'> {{listings.count}} available properties </h1>
+
+       </div>
+
+   </div>
+        <div class="row">
+                  	{% for listing in listings %}
+                    <div class="col-md-3 text-center" style='margin:10px;'>
+                       <a href='{{listing.get_absolute_url}}'> <img src="{{ listing.get_thumbnail_image }}" class="img-responsive col-md-12" style='width:250px;height:150px;'/></a><br>
+                        <p>{{listing.title|truncatechars:30}}<br>
+                        <b>{{listing.get_price}}</b></p>
+                    </div>
+                    {% endfor %}
+                  
+         
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+$(function () {
+    $('.navbar-toggle').click(function () {
+        $('.navbar-nav').toggleClass('slide-in');
+        $('.side-body').toggleClass('body-slide-in');
+        $('#search').removeClass('in').addClass('collapse').slideUp(200);
+
+        /// uncomment code for absolute positioning tweek see top comment in css
+        //$('.absolute-wrapper').toggleClass('slide-in');
+        
+    });
+   
+   // Remove menu for searching
+   $('#search-trigger').click(function () {
+        $('.navbar-nav').removeClass('slide-in');
+        $('.side-body').removeClass('body-slide-in');
+
+        /// uncomment code for absolute positioning tweek see top comment in css
+        //$('.absolute-wrapper').removeClass('slide-in');
+
+    });
+});
+</script>
+{% endblock %}

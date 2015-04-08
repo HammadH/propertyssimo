@@ -39,71 +39,50 @@
     font-family: 'Open Sans Condensed', sans-serif;
     font-size:17px;
  }
+
+ p
+ {
+  font-family: 'Open Sans Condensed', sans-serif;
+    font-size:17px;
+ }
 </style>
    
   </head>
 
   <body>
 
-    <div class="container" style='margin-top:;'>
-      <div class='row'>
-        <div class='col-sm-2'></div>
-        <div class='col-sm-8'>
-         
-    <nav class="nav nav-pills" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-
-
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav nav-pills">
-      <li style='margin-right:3px;'><a href="#">Dubai Marina</a></li>
-      <li style='margin-right:3px;'><a href="#">Palm Jumeirah</a></li>
-      <li style='margin-right:3px;'><a href="#">Downtown</a></li>
-      <li style='margin-right:3px;'><a href="#">JBR</a></li>
-      <li style='margin-right:3px;'><a href="#">All Neighbourhoods</a></li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
- </div>
-
-        <div class='col-sm-2'></div>
-
- </div>
-
-<div class="container" style='margin-top:3%'>
-  <div class='row'>
-  
-    <div class='col-lg-3'  style='margin-bottom:-10%'>
-<img class="img-responsive" src="{% static 'assets/img/nl.png' %}" style='width:200px;'>
-</div>
-<div class='col-lg-2'></div>
-<div class='col-lg-6 pull-right'>
-        <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-linkedin fa-2"></i></p>
-        <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-twitter fa-2"></i></p>
-        <p class="navbar-text navbar-right" style='color:#0e3695;'><i class="fa fa-facebook fa-2"></i></p>
-       
-       <a href="mailto:contact@propertyssimo.com"><p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-envelope-o fa-2"></i> <small>contact@propertyssimo.com</small></p></a>
-        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-phone fa-2"></i> <small>+971 4 277 6321</small></p>
-      </div>
+    <nav class="navbar-top navbar-default navbar-fixed-top" style='height:50px'>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img class="img-responsive" src="{% static 'assets/img/nl_logo.png' %}" style='width:70%;margin-top:-10px;'></a>
     </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style='margin-top:-10px;'>
+        <li><a href="{% url 'marina' %}">Dubai Marina</a></li>
+        <li><a href="{% url 'jbr' %}">JBR</a></li>
+        <li><a href="{% url 'palm' %}">Palm Jumeirah</a></li>
+        <li><a href="{% url 'downtown' %}">Downtown Dubai</a></li>
+      </ul>
+       <ul class="nav navbar-nav pull-right" style='margin-top:-25px; text-color'>
+        <li><a href='#'><p class="navbar-text navbar-right"><i class="fa fa-phone fa-2"></i> <small>+971 4 277 6321</small></p></a></li>
+        <li><a href="mailto:contact@propertyssimo.com"><p class="navbar-text navbar-right"><i class="fa fa-envelope-o fa-2"></i> <small>contact@propertyssimo.com</small></p></a></li>
+        <li><a href="#"><p class="navbar-text navbar-right" ><i class="fa fa-linkedin fa-2"></i></p></a></li>
+        <li><a href="#"><p class="navbar-text navbar-right" ><i class="fa fa-twitter fa-2"></i></p></a></li>
+        <li><a href="#"><p class="navbar-text navbar-right"><i class="fa fa-facebook fa-2"></i></p></a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
 
-   
-<nav class="nav nav-pills">
-        <div class="container-fluid">
-        <ul class="nav nav-pills pull-right">
-             <li role="presentation"><a href="#" style='color:#0e3695;'>HOME</a></li>
-             <li role="presentation"><a href="#" class="navbar-link"  style='color:#0e3695;'>ABOUT US</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>SERVICES</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>ADVICE</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>BLOG</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>EVENTS</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>CAREERS</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#0e3695;'>CONTACT US</a></li>
-        </ul>
-      </div>
+  </div>
 </nav>
-</div>
+
+
 
 {% block nav %} {% endblock %}
     
@@ -114,39 +93,27 @@
         <div class="footer1">
             <div class="container">
                 <div class="row">
+                  <div class="col-md-6 widget">
+                      <h4 style='color:white'>More about Propertyssimo</h4>
+                        <div class="widget-body">
+                          <p>Propertyssimo Real Estate has recently launched our new approach and 
+                            integrated the latest technologies into business of real estate. Supported with 
+                            highly trained, dedicated, classy team of professionals, prioritizing the interests 
+                            of our Clientelle Exclusively, we are here to nurture your comfort and success.</p> 
+                            <p style='font-family: Open Sans Condensed, sans-serif;'>Being a former AJ Real Estate, established in 2003 we have grown and learned 
+                            following the strategy of UAE Leaders, combined with international expertise 
+                            and practice. The world goes further, so we do.</p>
+                            <button class='btn btn-default' style='background-color:#232323; color:white' href="#">Read More</button>
+                          </div>
+                        </div>
                     
-                    <div class="col-md-3 widget">
-                        <h3 class="widget-title">Contact</h3>
-                        <div class="widget-body">
-                            <p>+971 4 277 6321<br>
-                               <i class="fa fa-skype fa-2"></i> propertyssimo
-                                <br>
-                                Office 3302,<br>
-                                Concorde Tower,<br>
-                                Dubai Media City
-                            </p>    
-                        </div>
-                    </div>
+                   
 
-                    <div class="col-md-3 widget">
-                        <h3 class="widget-title">Follow us</h3>
-                        <div class="widget-body">
-                            <p class="follow-me-icons">
-                                <a href=""><i class="fa fa-twitter fa-2"></i></a>
-                                <a href=""><i class="fa fa-dribbble fa-2"></i></a>
-                                <a href=""><i class="fa fa-github fa-2"></i></a>
-                                <a href=""><i class="fa fa-facebook fa-2"></i></a>
-                            </p>    
-                        </div>
-                    </div>
+                    
 
                     <div class="col-md-6 widget">
-                        <h3 class="widget-title">Propertyssimo</h3>
-                        <div class="widget-body">
-                            
-                        </div>
+        <iframe width='100%' height='250px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/hammad.lleon42n/attribution,zoomwheel.html?access_token=pk.eyJ1IjoiaGFtbWFkIiwiYSI6InRVem9HZ3cifQ.KCNUOrgFEeNoJ3pHmKVsSg'></iframe>
                     </div>
-
                 </div> <!-- /row of widgets -->
             </div>
         </div>
@@ -159,19 +126,24 @@
                         <div class="widget-body">
                             <p class="simplenav">
                                 <a href="#">Home</a> | 
-                                <a href="about.html">About</a> |
-                                <a href="sidebar-right.html">Sidebar</a> |
-                                <a href="contact.html">Contact</a> |
-                                <b><a href="signup.html">Sign up</a></b>
+                                <a href="about.html">About Us</a> |
+                                <a href="sidebar-right.html">Services</a> |
+                                <a href="contact.html">Advice</a> |
+                                <a href="signup.html">Blog</a> |    
+                                <a href="signup.html">Events</a> |
+                                <a href="signup.html">Careers</a> |
                             </p>
                         </div>
                     </div>
 
                     <div class="col-md-6 widget">
                         <div class="widget-body">
-                            <p class="text-right">
-                                
-                            </p>
+                           <p class="simplenav">
+                            <a href="" class='pull-right' style='margin-right:10px;'><i class="fa fa-twitter fa-2"></i></a>
+                                <a href="" class='pull-right' style='margin-right:10px;'><i class="fa fa-dribbble fa-2"></i></a>
+                                <a href="" class='pull-right' style='margin-right:10px;'><i class="fa fa-github fa-2"></i></a>
+                                <a href="" class='pull-right' style='margin-right:10px;'><i class="fa fa-facebook fa-2"></i></a>
+                              </p>
                         </div>
                     </div>
 
@@ -179,7 +151,8 @@
             </div>
         </div>
 
-    </footer>   
+    </footer> 
+    {% block script %} {% endblock %} 
   </body>
 
 </html>

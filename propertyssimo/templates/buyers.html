@@ -2,33 +2,7 @@
 {% load staticfiles %}
 
 
-{% block nav %}
-<nav class="navbar navbar-inverse" style='margin:0px;'>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-       
-      <ul class="nav navbar-nav">
 
-        <li><a href="#">Investors</a></li>
-        <li><a href="{% url 'selling' %}">Selling</a></li>
-        <li class="active"><a href="{% url 'buyers' %}">Buying <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Landlords</a></li>
-        <li><a href="#">Letting</a></li>
-        <li><a href="#">Vacational Rentals</a></li>
-        <li><a href="#">New Developments</a></li>
-        
-      </ul>
-   <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn" style='background:#FF8112;color:white;'>Submit</button>
-      </form>
-     
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-{% endblock %}
 
 {% block main %}
 
@@ -37,11 +11,37 @@
 <div class='container'  >
 	<div class='row' style='margin:20px;'>
 	
+   <div class='container'>
+  <div class='row'>
+    <div class='col-lg-1'></div>
+    <div class='col-lg-10'>
+<nav class="navbar navbar-inverse" >
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       
+      <ul class="nav navbar-nav">
+
+        <li style='margin-right:35px;'><a href="{% url 'investing' %}">Investors</a></li>
+         <li style='margin-right:35px;'><a href="{% url 'selling' %}">Selling</a></li>
+        <li class="active" style='margin-right:35px;'><a href="{% url 'buyers' %}">Buying <span class="sr-only">(current)</span></a></li>
+        <li style='margin-right:35px;'><a href="#">Landlords</a></li>
+        <li style='margin-right:35px;'><a href="#">Letting</a></li>
+        <li style='margin-right:35px;'><a href="#">Vacational Rentals</a></li>
+        <li style='margin-right:35px;'><a href="#">New Developments</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+</div>
+  <div class='col-lg-1'></div>
+</div>
+  </div><!-- /.container-fluid -->
 		
 <div class='row' style='margin:20px;'>
   <h1 class='text-center'>Buyer Services</h1><br/><br/>
   <h2>Ready to buy? We can help!</h2>
   <p>Whether your upcoming investment represents a threshold-crossing life transition or a strategic acquisition, Propertyssimo  can create a plan to suit your needs and personality. Our agents are highly experienced in navigating the maze of today's market from start to finish, including property identification, lending options, negotiations, and final closing.</p><br/>
+<div class='collapse' id='viewdetails'>
   
  <h2>Propertyssimo Buyer services include:</h2>
  <div class='col-lg-5' style='padding:15px;'>
@@ -70,9 +70,16 @@
 </div>
 </div>
 </div>
+
+
+<p class='text-center'><a class="btn" data-toggle="collapse" data-target="#viewdetails">Read more &raquo;</a></p>
+</div>
+</div>
 </div>
 
+<div class='container'>
  <div class='row' style='margin:20px;'>
+  <h3>Explore locations</h3>
   <iframe src="http://wikimapia.org/#lang=en&lat=25.139069&lon=55.320282&z=11&m=m" frameborder="0" height="400px" width="1100" scrolling="no"></iframe>
  </div>
 

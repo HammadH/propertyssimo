@@ -1,117 +1,16 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+{% block assets %}
+ <link href="{% static 'assets/css/carousel.css' %}" rel="stylesheet">
 
-    <title>Propertyssimo - World Class Real Estate Agency</title>
+{% endblock %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/css/carousel.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
-
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-    <script>
-    $(document).ready(function(){
-      $('.clickable').click(function(){
-        window.document.location = $(this).data('url')
-      });
-
-    });
-    </script>
-  </head>
-
-<body>
- <nav class="navbar">
-        <div class="container-fluid">
-        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-linkedin fa-2"></i></p>
-        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-twitter fa-2"></i></p>
-        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-facebook fa-2"></i></p>
-        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-skype fa-2"></i><small> propertyssimo</small></p>
-        <p class="navbar-text navbar-right" style='color:#777;'><i class="fa fa-phone fa-2"></i> <small>+971552929237</small></p>
-      </div>
-    </nav>
-<nav class="nav nav-pills">
-        <div class="container-fluid">
-        <div class="navbar-header" style='margin-top:-65px;'>
-          <a class="navbar-brand" href="#">
-            <img class="img-responsive" src="{% static 'assets/img/nl.png' %}" >
-          </a>
-
-        </div>
-      
-        
-        <ul class="nav nav-pills pull-right">
-             <li role="presentation" class="" style="background: white;"><a href="#" style='color:#777;'>HOME</a></li>
-             <li role="presentation"><a href="#" class="navbar-link"  style='color:#777;'>ABOUT US</a></p></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>SERVICES</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>ADVICE</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>BLOG</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>EVENTS</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>CAREERS</a></li>
-             <li role="presentation"><a href="#" class="navbar-link" style='color:#777;'>CONTACT US</a></li>
-        </ul>
-        
-        
-      </div>
-</nav>
-</div>
-<nav class="navbar navbar-default" style='margin:0px;'>
-  <div class="container">
-
-   
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Investors <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Selling</a></li>
-        <li><a href="#">Buying</a></li>
-        <li><a href="#">Landlords</a></li>
-        <li><a href="#">Letting</a></li>
-        <li><a href="#">Vacational Rentals</a></li>
-        <li><a href="#">New Developments</a></li>
-        
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn" style='background:#0e3695;color:white;'>Submit</button>
-      </form>
-     
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<div class='container'>
+{% block main %}
+<div class='container' style='margin-top:100px;'>
 <div class='row'>
 	<div class='col-md-8'>
 		<h3>{{listing}}</h3>
-
-
-
-<section class="section-white">
-  <div class="container">
+  
 
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -148,16 +47,8 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
     </div>
-
   </div>
-</section>
-	
 
-
-
-	<p style='margin:; padding:55px;'>{{listing.description}}</p>
-
-</div>
 <div class='col-sm-3 col-md-3' style='margin-top:50px;'>
             <h4>Contact {{listing.agent_name}}</h4>
             <form class='form-group'>
@@ -168,80 +59,19 @@
                 <button class='btn' style='margin:10px;'>Send Message</button>
             </form>
             </div>
-
+</div>
+<div class='row' style='margin-top:35px'>
+  <div class='col-lg-8'>
+  <div class='row' style='padding:35px'>
+    <div class='col-md-3'><p><b>Type:</b>{% if listing.subtype == 'AP' %} Apartment {% elif listing.subtype == 'VI' %} Villa {% else %} Commercial {% endif %}</p></div>
+    <div class='col-md-3'><p><b>Location:</b> {{listing.location}}</p></div>
+    <div class='col-md-3'><p><b>Bedrooms:</b> {{listing.bedrooms}}</p></div>
+    <div class='col-md-3'><p><b>Bathrooms:</b> {{listing.bathrooms}}</p></div>
+   
+  </div>
+      <p style='margin:; padding:;'>{{listing.description}}</p>
+    </div>
 </div>
 </div>
-
-<footer id="footer" class="top-space">
-
-        <div class="footer1">
-            <div class="container">
-                <div class="row">
-                    
-                    <div class="col-md-3 widget">
-                        <h3 class="widget-title">Contact</h3>
-                        <div class="widget-body">
-                            <p>+234 23 9873237<br>
-                                <a href="mailto:#">some.email@somewhere.com</a><br>
-                                <br>
-                                234 Hidden Pond Road, Ashland City, TN 37015
-                            </p>    
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 widget">
-                        <h3 class="widget-title">Follow me</h3>
-                        <div class="widget-body">
-                            <p class="follow-me-icons">
-                                <a href=""><i class="fa fa-twitter fa-2"></i></a>
-                                <a href=""><i class="fa fa-dribbble fa-2"></i></a>
-                                <a href=""><i class="fa fa-github fa-2"></i></a>
-                                <a href=""><i class="fa fa-facebook fa-2"></i></a>
-                            </p>    
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 widget">
-                        <h3 class="widget-title">Text widget</h3>
-                        <div class="widget-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-                            <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
-                        </div>
-                    </div>
-
-                </div> <!-- /row of widgets -->
-            </div>
-        </div>
-
-        <div class="footer2">
-            <div class="container">
-                <div class="row">
-                    
-                    <div class="col-md-6 widget">
-                        <div class="widget-body">
-                            <p class="simplenav">
-                                <a href="#">Home</a> | 
-                                <a href="about.html">About</a> |
-                                <a href="sidebar-right.html">Sidebar</a> |
-                                <a href="contact.html">Contact</a> |
-                                <b><a href="signup.html">Sign up</a></b>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 widget">
-                        <div class="widget-body">
-                            <p class="text-right">
-                                
-                            </p>
-                        </div>
-                    </div>
-
-                </div> <!-- /row of widgets -->
-            </div>
-        </div>
-
-    </footer>   
-
-</body>
-</html>
+</div>
+{% endblock %}

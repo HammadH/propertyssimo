@@ -2,41 +2,41 @@
 {% load staticfiles %}
 
 
-{% block nav %}
-<nav class="navbar navbar-inverse" style='margin:0px;'>
+
+
+{% block main %}
+<img src = "{% static 'assets/img/selling.jpg' %}" class='img-responsive'/>
+
+
+<div class='container'  >
+
+  <div class='row' style='margin:20px;'>
+  
+      <div class='container'>
+  <div class='row'>
+    <div class='col-lg-1'></div>
+    <div class='col-lg-10'>
+<nav class="navbar navbar-inverse" >
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
        
       <ul class="nav navbar-nav">
 
-        <li><a href="#">Investors</a></li>
-        <li class="active"><a href="{% url 'selling' %}">Selling <span class="sr-only">(current)</span></a></li>
-        <li><a href="{% url 'buyers' %}">Buying</a></li>
-        <li><a href="#">Landlords</a></li>
-        <li><a href="#">Letting</a></li>
-        <li><a href="#">Vacational Rentals</a></li>
-        <li><a href="#">New Developments</a></li>
-        
+        <li style='margin-right:35px;'><a href="{% url 'investing' %}">Investors</a></li>
+         <li style='margin-right:35px;' class="active"><a href="{% url 'selling' %}">Selling <span class="sr-only">(current)</span></a></li>
+        <li style='margin-right:35px;'><a href="{% url 'buyers' %}">Buying</a></li>
+        <li style='margin-right:35px;'><a href="#">Landlords</a></li>
+        <li style='margin-right:35px;'><a href="#">Letting</a></li>
+        <li style='margin-right:35px;'><a href="#">Vacational Rentals</a></li>
+        <li style='margin-right:35px;'><a href="#">New Developments</a></li>
+
       </ul>
-   <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn" style='background:#FF8112;color:white;'>Submit</button>
-      </form>
-     
     </div><!-- /.navbar-collapse -->
+  </nav>
+</div>
+  <div class='col-lg-1'></div>
+</div>
   </div><!-- /.container-fluid -->
-</nav>
-{% endblock %}
-
-{% block main %}
-<img src = "{% static 'assets/img/selling.jpg' %}" class='img-responsive'/>
-
-<div class='container'  >
-  <div class='row' style='margin:20px;'>
-  
-    
 <div class='row' style='margin:20px;'>
   <h1 class='text-center'>Seller Services</h1>
   <p>Selling in Dubai is not a chore; it's an adventure! We live in one of the most in-demand and dynamic real estate markets in the region. With careful planning, attention to details and consistent follow through, Propertyssimo Advisors excel at getting their clients the highest price and best terms when it comes to the sale of your most important asset.</p><br/>
@@ -63,6 +63,8 @@
   
 
 </div>
+
+
 <div class='col-lg-1'></div>
 
 <div class='col-lg-5' style='padding:15px;'>
@@ -88,47 +90,65 @@
   <p>Your Propertyssimo agent gets the word out by designing a marketing strategy specific to your property utilizing the most appropriate advertising and promotional tools.</p>
   </div> 
 </div>
+
+
 </div>
 </div>
 
- <div class='row' style='background-color:#EBEBE9;'>
+ <div class='row collapse-group' style='background-color:#EBEBE9;'>
   <h1 class='text-center'> Preparing your Property for Sale</h1>
   <h2 class='text-center'>Getting ready to sell? Don't know where to start?</h2>
   <p style='margin:25px;'>A good place to begin is to consider who your likely buyer(s) will be. When you have some idea of your likely buyers, think what attributes that group of buyers is looking for in a property. Now look objectively at your property and note which of those qualities it has and which it does not. Also, consider what qualities your likely buyers would consider undesirable in a home (such as lack of parking or located on a busy street) and note whether your property has any of those negatives. The combination of positive and negative attributes will determine the eventual sale price of your property.</p>
   <p style='margin:25px;'>To the extent possible prepare your home by increasing the positives and decreasing the negatives.
 In today's marketplace many properties are 'staged' before they are placed on the market. Staging is designed to maximize the property's appeal to buyers. Staging can be as simple as de-cluttering and re-arranging furniture, major cleaning or as complex as a complete make-over including new paint, carpets, landscaping and furnishing. As you prepare to market your property, visit open houses of similar properties to see how they show. These homes are your competition. To get top dollar your house should look better than the best of the competition..</p>
 
-<h2 style='margin:25px;'>Whether you opt for a full staging or a minimal do-it-yourself preparation of your property, the following guidelines should be observed:</h2>
+<div class='collapse' id='viewdetails'>
+<h2  style='margin:25px;'>Whether you opt for a full staging or a minimal do-it-yourself preparation of your property, the following guidelines should be observed:</h2>
 
-<div class='col-lg-5' style='margin:25px;'>
-<li><p>Keep it clean. Spotless in fact. Windows washed, fixtures and appliances sparkling, carpets and floors cleaned, garage and storage areas tidy. Everything looks better when it's clean. Buyers don't pay top dollar for dirt.</p></li>
-<li><p>Keep it neutral. Replace your personal taste with a neutral palette. Buyers will be able to visualize their own taste better if they don't have to see through yours. Use a few small items such as a vase of flowers, dish of fruit or pillows on the couch to add color or texture.</p></li>
-<li><p>Keep it simple. Clutter makes a property look smaller and personal items distract buyers.</p></li>
+  <div class='col-lg-5' style='margin:25px;'>
+  <li><p>Keep it clean. Spotless in fact. Windows washed, fixtures and appliances sparkling, carpets and floors cleaned, garage and storage areas tidy. Everything looks better when it's clean. Buyers don't pay top dollar for dirt.</p></li>
+  <li><p>Keep it neutral. Replace your personal taste with a neutral palette. Buyers will be able to visualize their own taste better if they don't have to see through yours. Use a few small items such as a vase of flowers, dish of fruit or pillows on the couch to add color or texture.</p></li>
+  <li><p>Keep it simple. Clutter makes a property look smaller and personal items distract buyers.</p></li>
+  </div>
+  <div class='col-lg-1'></div>
+
+  <div class='col-lg-5' style='margin:25px;'>
+  <li><p>Keep it fresh.  Air your property out before showings and use mild or unscented fresheners to keep it smelling fresh (strongly scented air fresheners may have the opposite effect so be careful here).</p></li>
+  <li><p>Keep it warm and inviting. Buyers should feel very comfortable when they are looking at your property; if they don't they are less likely to imagine themselves being comfortable there.</p></li>
+  </div>
+
 </div>
-<div class='col-lg-1'></div>
-
-<div class='col-lg-5' style='margin:25px;'>
-<li><p>Keep it fresh.  Air your property out before showings and use mild or unscented fresheners to keep it smelling fresh (strongly scented air fresheners may have the opposite effect so be careful here).</p></li>
-<li><p>Keep it warm and inviting. Buyers should feel very comfortable when they are looking at your property; if they don't they are less likely to imagine themselves being comfortable there.</p></li>
-</div>
 
 </div>
 
-<div class='row' style='margin:20px;'>
+<p class='text-center'><a class="btn" data-toggle="collapse" data-target="#viewdetails">Read more &raquo;</a></p>
+<div class='row' style='margin:25px;'>
+  <div class='col-lg-5'>
 <h2 style='margin:20px;'>Sounds like a lot of work?</h2>
-<div class='col-lg-5'>
-<p>Your Propertyssimo agent is knowledgeable about all aspects of preparing your property for sale and understands the marketplace in which your property is located. Your agent can recommend resources for obtaining reports and can help you evaluate the options for marketing your property to bring you the highest price and best terms.</p>
-</div>
-<div class='col-lg-1'></div>
-<div class='col-lg-5'>
-<b>Document Checklist</b>
-<li><p>Agreement of Sale</li></p>
-<li><p>Oqood registration ( for off plan property )</li></p>
-<li><p>Title Deed (for completed property)</li></p>
-<li><p>Tenancy Agreement (in case if property is rented)</li></p>
-<li><p>NOC (Non Objection Certificate) from Developer or Strata Management company of your building for the sale and transfer of your property.</li></p>
-</div>
+      
+        <p>Your Propertyssimo agent is knowledgeable about all aspects of preparing your property for sale and understands the marketplace in which your property is located. Your agent can recommend resources for obtaining reports and can help you evaluate the options for marketing your property to bring you the highest price and best terms.</p>
+      </div>
+
+      <div class='col-lg-5 pull-right'>
+        <h3>Document Checklist</h3>
+        <li><p>Agreement of Sale</li></p>
+        <li><p>Oqood registration ( for off plan property )</li></p>
+        <li><p>Title Deed (for completed property)</li></p>
+        <li><p>Tenancy Agreement (in case if property is rented)</li></p>
+        <li><p>NOC (Non Objection Certificate) from Developer or Strata Management company of your building for the sale and transfer of your property.</li></p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
 </div>
 </div>
 
 {% endblock %}
+
+{% block script %}
+
+ {% endblock %}

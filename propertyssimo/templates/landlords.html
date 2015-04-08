@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+<img src="{% static 'assets/img/x.jpg' %}"/>
+
+<div class='container'  >
+
+  <div class='row' style='margin:20px;'>
+  
+      <div class='container'>
+  <div class='row'>
+    <div class='col-lg-1'></div>
+    <div class='col-lg-10'>
+<nav class="navbar navbar-inverse" >
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       
+      <ul class="nav navbar-nav">
+
+        <li style='margin-right:35px;'><a href="{% url 'investing' %}">Investors</a></li>
+         <li style='margin-right:35px;'><a href="{% url 'selling' %}">Selling <span class="sr-only">(current)</span></a></li>
+        <li style='margin-right:35px;'><a href="{% url 'buyers' %}">Buying</a></li>
+        <li style='margin-right:35px;' class="active"><a href="{% url 'landlords' %}">Landlords</a></li>
+        <li style='margin-right:35px;'><a href="#">Letting</a></li>
+        <li style='margin-right:35px;'><a href="#">Vacational Rentals</a></li>
+        <li style='margin-right:35px;'><a href="#">New Developments</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+</div>
+  <div class='col-lg-1'></div>
+</div>
+  </div><!-- /.container-fluid -->
+</div>
+</div>
+<div class='container'>
+	<h1>Landlords</h1>
+  <h3>Looking for Property Management Services?</h3>
+	<p>Renting out in Dubai is an adventure! We live in one of the most in-demand and complicated real estate markets in the region. With careful planning, attention to details and consistent follow through, Propertyssimo agents excel at getting their clients the highest price, selected tenants and best terms when it comes to rentingof your most important asset.</p>
+  <p>We take the stress out of the process and managing all kinds of requests including maintenance. Our process is tried and true. Relax and let us work out the day-to-day issues.</p>
+	<h3>What does Propertyssimo provide?</h3>
+	<li><p>Analyze Market</p></li>
+	<li><p>Estimate rents, make recommendations to maximize rents</p></li>
+	<li><p>Evaluate Potential Returns</p></li>
+	<li><p>Assess Time Frame</p></li>
+
+
+	<div class='collapse' id='viewdetails' style='margin-top:100px;'>
+		<h3>I want to sell or rent, which ever happens first!</h3>
+		<p style='margin-top:;'>This is actually a fairly common circumstance. We understand that there are times, when you need income from your property quickly and cannot wait for it to sell. Contact us to request more information.</p>
+	
+      <h3 style='margin-top:50px;'>Development Remodelling</h3>
+		<p style='margin-top:;'>Propertyssimo will turn your unsuccessful development into 'Project in Demand'. Our team of affliated consultants, architects and contractors will renevote and/or remodel the development to convert it into feasible and attractive real estate. We have a number of successful buildings converted into Hotels and Hotel Apartments.</p>
+	
+
+
+</div>
+<p class='text-center'><a class="btn" data-toggle="collapse" data-target="#viewdetails">Read more &raquo;</a></p>
+</div>
+
+{% endblock %}

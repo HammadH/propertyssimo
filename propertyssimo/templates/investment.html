@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+<img src="{% static 'assets/img/x.jpg' %}"/>
+
+<div class='container'  >
+
+  <div class='row' style='margin:20px;'>
+  
+      <div class='container'>
+  <div class='row'>
+    <div class='col-lg-1'></div>
+    <div class='col-lg-10'>
+<nav class="navbar navbar-inverse" >
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       
+      <ul class="nav navbar-nav">
+
+        <li style='margin-right:35px;' class="active"><a href="{% url 'investing' %}">Investors</a></li>
+         <li style='margin-right:35px;'><a href="{% url 'selling' %}">Selling <span class="sr-only">(current)</span></a></li>
+        <li style='margin-right:35px;'><a href="{% url 'buyers' %}">Buying</a></li>
+        <li style='margin-right:35px;'><a href="{% url 'landlords' %}">Landlords</a></li>
+        <li style='margin-right:35px;'><a href="#">Letting</a></li>
+        <li style='margin-right:35px;'><a href="#">Vacational Rentals</a></li>
+        <li style='margin-right:35px;'><a href="#">New Developments</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+</div>
+  <div class='col-lg-1'></div>
+</div>
+  </div><!-- /.container-fluid -->
+</div>
+</div>
+<div class='container'>
+	<h1>Investing</h1>
+	<p>Property investment is arguably one of the safest ways to build and sustain wealth. You should always remember that the fundamentals to any 
+		successful property investment is to find the right property to suit their needs, in the best location and at the lowest price.</p>
+	<p><b>You must not consider investment until:</b></p>
+	<li><p>You count Risk of Investment</p></li>
+	<li><p>You learn about Current Market Conditions</p></li>
+	<li><p>Evaluate Potential Returns</p></li>
+	<li><p>Assess Time Frame</p></li>
+
+	<p>Opportunities to invest in property should always be approached with caution. It is crucially important to develop <b>Investment strategy</b> that suits the best to maximise the investment returns and secure <b>the exit strategy</b></p>
+
+	<div class='collapse' id='viewdetails' style='margin-top:100px;'>
+		<h3>What type of Investor are you?</h3>
+		<p style='margin-top:50px;'><b>Private Investor</b></p>
+		<p>A successful real estate investment relies heavily on the use of right investment strategy; however, they largely depend on the requirements and desires of individual proeprty investor.</p>
+
+		<p style='margin-top:50px;'><b>Institutional Investor</b></p>
+		<p>Propertyssimo's unique combination of real estate investment expertise, industry leading technology, superior support services and acclaimed research will offer customised solutions for institutional investors and sophisticated private family investors.</p>
+
+		<p style='margin-top:50px;'><b>Developer</b></p>
+		<p>Propertyssimo offers selected developers innovative solutions to securing predevelopment marketing and sales. We do also partner with the industry's top real estate developers, consulting on creation and renovation of wide range of residential and commercial development projects.</p>
+
+		<p>Our involvement in each project is comprehensive. From pre-development and construction to marketing, sales and title deed registration services, Propertyssimo is involved in every step of the way. Using our dedicated team from start-up to the final closing, we are uniquely positioned to offer specialised expert guidance.</p>
+
+
+</div>
+<p class='text-center'><a class="btn" data-toggle="collapse" data-target="#viewdetails">Read more &raquo;</a></p>
+</div>
+
+{% endblock %}

@@ -14,7 +14,7 @@
 
 {% block main %}
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style='margin-top:100px;'>
          <div class='container'>
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -76,12 +76,18 @@
       </select>
        
           <div class='row' style='margin-top:25px;' >
-            
-           
-              <input type="text" name='min_price' class="form-control" style='margin:10px;' placeholder="Min Price">
-      <input type="text" name='max_price' class="form-control" style='margin:10px;' placeholder="Max Price">
+            <div class='col-md-3'>
+            <input type="text" name='min_price' class="form-control" style='margin:;' placeholder="Min Price">
+          </div>
+          <div class='col-md-3'>
+          <input type="text" name='max_price' class="form-control" style='margin:;' placeholder="Max Price">
+        </div>
+        <div class='col-md-4'>
           <input type="text" name='search' class="form-control pull" style=' padding-right:210px;' placeholder="Search">
+        </div>
+        <div class='col-md-2'>
            <button type="submit" class="btn" style='background:#0e3695;color:white;'>Submit</button>
+         </div>
         
       </form>
       </div>

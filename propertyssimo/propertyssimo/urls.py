@@ -10,7 +10,7 @@ import views
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', views.Landing.as_view(), name='home'),
-    url(r'^buying/$', views.Buyers.as_view(), name='buyers'),
+    url(r'^buying/$', views.Buyers.as_view(), name='buying'),
     url(r'^investing/$', views.Investing.as_view(), name='investing'),
     url(r'^selling/$', views.Selling.as_view(), name='selling'),
      url(r'^landlords/$', views.Landlords.as_view(), name='landlords'),

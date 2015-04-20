@@ -1,109 +1,89 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-
-
+{% block navi %}
+                        <li ><a href="/">Home</a></li>
+                        <li ><a href="{% url 'investing' %}">Investors</a></li>
+                                <li class="active"><a href="{% url 'selling' %}">Selling</a></li>
+                                <li><a href="{% url 'buying' %}">Buying</a></li>
+                               <li><a href="{% url 'landlords' %}">Landlords</a></li>
+                                <li><a href="portfolio-single.html">Letting</a></li>
+                                <li><a href="portfolio-single.html">Vacational Rentals</a></li>
+                                <li><a href="portfolio-single.html">New Developments</a></li>
+                            {% endblock %}
 
 {% block main %}
-<img src = "{% static 'assets/img/selling.jpg' %}" class='img-responsive'/>
 
-
-<div class='container'  >
-
-  <div class='row' style='margin:20px;'>
+ <section class="bread-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Selling</h4>
+                    </div>
+                    <div class="col-sm-6 hidden-xs text-right">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li>Selling</li>
+                        </ol><!--breadcrumb-->
+                    </div>
+                </div>
+            </div>
+        </section><!--.bread-wrap-->
+        <div class="divide80"></div>
+        <div class="container">
+            <div class="row">   
+                <div class="col-md-9">
+                    <div class="row">                       
+                          <div class="col-md-12">
+                            <div class="blog-wrap">
+                                
+                                    
+                                        <img src="{% static 'img/showcase-1.jpg' %}" class="img-responsive" alt="workimg">
+                                        
+                                <div class="divide30"></div>
+                                <div class="blog-desc">
+                                    <h4>Seller Services</h4>
+                                   <p>Selling in Dubai is not a chore; it's an adventure! We live in one of the most in-demand and dynamic real estate markets in the region. With careful planning, attention to details and consistent follow through, Propertyssimo Advisors excel at getting their clients the highest price and best terms when it comes to the sale of your most important asset.</p><br/>
   
-      <div class='container'>
-  <div class='row'>
-    <div class='col-lg-1'></div>
-    <div class='col-lg-10'>
-<nav class="navbar navbar-inverse" >
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-       
-      <ul class="nav navbar-nav">
-
-        <li style='margin-right:35px;'><a href="{% url 'investing' %}">Investors</a></li>
-         <li style='margin-right:35px;' class="active"><a href="{% url 'selling' %}">Selling <span class="sr-only">(current)</span></a></li>
-        <li style='margin-right:35px;'><a href="{% url 'buyers' %}">Buying</a></li>
-        <li style='margin-right:35px;'><a href="#">Landlords</a></li>
-        <li style='margin-right:35px;'><a href="#">Letting</a></li>
-        <li style='margin-right:35px;'><a href="#">Vacational Rentals</a></li>
-        <li style='margin-right:35px;'><a href="#">New Developments</a></li>
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </nav>
-</div>
-  <div class='col-lg-1'></div>
-</div>
-  </div><!-- /.container-fluid -->
-<div class='row' style='margin:20px;'>
-  <h1 class='text-center'>Seller Services</h1>
-  <p>Selling in Dubai is not a chore; it's an adventure! We live in one of the most in-demand and dynamic real estate markets in the region. With careful planning, attention to details and consistent follow through, Propertyssimo Advisors excel at getting their clients the highest price and best terms when it comes to the sale of your most important asset.</p><br/>
-  
- <h2>As a Seller, Propertyssimo Agent is Your:</h2>
- <div class='col-lg-5' style='padding:15px;'>
-  <div class='row'>
-  <h3>Analyst</h3>
+ <h4>As a Seller, Propertyssimo Agent is Your:</h4>
+ 
+  <h5>Analyst</h5>
   <p>We give you a strong start by determining the best pricing strategy. You'll receive a comprehensive market evaluation of your property using up-to-the-minute local market info and appropriate comparable sales data, so you can make a decision with confidence.</p>
-  </div>
-  <div class='row'>
-<h3>Negotiator</h3>
+ 
+<h5>Negotiator</h5>
 <p>We work with the Buyer’s agent in negotiation to maximize your sales price and optimize your terms. We'll be tough on your behalf and enjoy every minute.</p>
-</div>
-  <div class='row'>
-<h3>Lifeline</h3>
+
+<h5>Lifeline</h5>
 <p>We are available throughout the entire transaction to answer any and all questions that may arise. We are here to take care of you.</p>
-</div>
 
-  <div class='row'>
-<h3>Advisor</h3>
+<h5>Advisor</h5>
 <p>We work with you to prepare all disclosures and documentation necessary to safeguard your legal interests.</p>
-</div>
-  
 
-</div>
-
-
-<div class='col-lg-1'></div>
-
-<div class='col-lg-5' style='padding:15px;'>
-
-<div class='row'>
-  <h3>Consultant</h3> 
+<div class='collapse' id='viewdetails'>
+  <h5>Consultant</h5> 
   <p>We help make your property shine. Your agent will work with you to prepare your property for the market by making repairs, obtaining reports and staging.</p>
-  </div>
 
-<div class='row'>
-<h3>Networker</h3>
+
+
+<h5>Networker</h5>
 <p>As your agent, we work the real estate community to ensure your property has maximum exposure to the most qualified buyers. Our agents love to schmooze.</p>
-</div>
 
-
-<div class='row'>
-<h3>Coordinator</h3>
+<h5>Coordinator</h5>
 <p>Your Propertyssimo agent will arrange all inspections, appraisals,  and closing. We leave nothing to chance.</p>
-</div>
 
-<div class='row'>
-  <h3>Bullhorn</h3>
+  <h5>Bullhorn</h5>
   <p>Your Propertyssimo agent gets the word out by designing a marketing strategy specific to your property utilizing the most appropriate advertising and promotional tools.</p>
-  </div> 
-</div>
 
-
-</div>
-</div>
 
  <div class='row collapse-group' style='background-color:#EBEBE9;'>
-  <h1 class='text-center'> Preparing your Property for Sale</h1>
-  <h2 class='text-center'>Getting ready to sell? Don't know where to start?</h2>
+  <h4 class='text-center'> Preparing your Property for Sale</h4>
+  <h5 class='text-center'>Getting ready to sell? Don't know where to start?</h5>
   <p style='margin:25px;'>A good place to begin is to consider who your likely buyer(s) will be. When you have some idea of your likely buyers, think what attributes that group of buyers is looking for in a property. Now look objectively at your property and note which of those qualities it has and which it does not. Also, consider what qualities your likely buyers would consider undesirable in a home (such as lack of parking or located on a busy street) and note whether your property has any of those negatives. The combination of positive and negative attributes will determine the eventual sale price of your property.</p>
   <p style='margin:25px;'>To the extent possible prepare your home by increasing the positives and decreasing the negatives.
 In today's marketplace many properties are 'staged' before they are placed on the market. Staging is designed to maximize the property's appeal to buyers. Staging can be as simple as de-cluttering and re-arranging furniture, major cleaning or as complex as a complete make-over including new paint, carpets, landscaping and furnishing. As you prepare to market your property, visit open houses of similar properties to see how they show. These homes are your competition. To get top dollar your house should look better than the best of the competition..</p>
 
-<div class='collapse' id='viewdetails'>
-<h2  style='margin:25px;'>Whether you opt for a full staging or a minimal do-it-yourself preparation of your property, the following guidelines should be observed:</h2>
+
+<h5  style='margin:25px;'>Whether you opt for a full staging or a minimal do-it-yourself preparation of your property, the following guidelines should be observed:</h5>
 
   <div class='col-lg-5' style='margin:25px;'>
   <li><p>Keep it clean. Spotless in fact. Windows washed, fixtures and appliances sparkling, carpets and floors cleaned, garage and storage areas tidy. Everything looks better when it's clean. Buyers don't pay top dollar for dirt.</p></li>
@@ -120,17 +100,18 @@ In today's marketplace many properties are 'staged' before they are placed on th
 </div>
 
 </div>
+<hr>
 
-<p class='text-center'><a class="btn" data-toggle="collapse" data-target="#viewdetails">Read more &raquo;</a></p>
+   <p class='text-center'><a class="btn" data-toggle="collapse" data-target="#viewdetails">Read more &raquo;</a></p>
 <div class='row' style='margin:25px;'>
   <div class='col-lg-5'>
-<h2 style='margin:20px;'>Sounds like a lot of work?</h2>
+<h4 style='margin:20px;'>Sounds like a lot of work?</h4>
       
         <p>Your Propertyssimo agent is knowledgeable about all aspects of preparing your property for sale and understands the marketplace in which your property is located. Your agent can recommend resources for obtaining reports and can help you evaluate the options for marketing your property to bring you the highest price and best terms.</p>
       </div>
 
       <div class='col-lg-5 pull-right'>
-        <h3>Document Checklist</h3>
+        <h4>Document Checklist</h4>
         <li><p>Agreement of Sale</li></p>
         <li><p>Oqood registration ( for off plan property )</li></p>
         <li><p>Title Deed (for completed property)</li></p>
@@ -138,17 +119,43 @@ In today's marketplace many properties are 'staged' before they are placed on th
         <li><p>NOC (Non Objection Certificate) from Developer or Strata Management company of your building for the sale and transfer of your property.</li></p>
         </div>
       </div>
-    </div>
+
+   </div>
+ </div>
 
 
-
-
-
-</div>
-</div>
+                            <ul class="pager">
+                        </div>
+                    </div><!--row-->
+                </div>
+                <div class="col-md-3">
+                    <div class="sidebar-box margin40">
+                        <h4>Search</h4>
+                        <form role="form" class="search-widget">
+                            <input type="text" class="form-control">
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </div><!--sidebar-box-->
+                    <div class="sidebar-box margin40">
+                        <h4>Investing in Dubai</h4>
+                        <p>
+                            Investing in Real Estate in Dubai is arguably the best and safest way to increase your wealth. Read on to get an understanding in investment and how we can help you.
+                        </p>
+                    </div><!--sidebar-box-->
+                    <div class="sidebar-box margin40">
+                        <h4>Categories</h4>
+                        <ul class="list-unstyled cat-list">
+                            <li><a href="{% url 'investing' %}">Investing</a><i class="fa fa-angle-right"></i></li>
+<li><a href="{% url 'buying' %}">Buying</a><i class="fa fa-angle-right"></i></li>
+<li><a href="portfolio-single.html">Landlords</a><i class="fa fa-angle-right"></i></li>
+<li><a href="portfolio-single.html">Letting</a><i class="fa fa-angle-right"></i></li>
+<li><a href="portfolio-single.html">Vacational Rentals</a><i class="fa fa-angle-right"></i></li>
+<li><a href="portfolio-single.html">New Developments</a><i class="fa fa-angle-right"></i></li>
+                        </ul>
+                    </div><!--sidebar-box-->                
+                </div>
+            </div>
+        </div><!--blog container-->
 
 {% endblock %}
 
-{% block script %}
-
- {% endblock %}

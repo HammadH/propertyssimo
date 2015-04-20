@@ -2,84 +2,52 @@
 {% load staticfiles %}
 
 {% block assets %}
- <link href="{% static 'assets/css/carousel_1.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/css/news_carousel.css' %}" rel="stylesheet">
- <style>
- p
- {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size:17px;
- }
-h1
-{
-
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size:37px; 
-}
- </style>
- {% endblock %}
-
-
-{% block nav %}
-
+<link href="{% static 'css/news_carousel.css' %}" rel="stylesheet">
 
 {% endblock %}
 
+                        {% block navi %}
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="{% url 'investing' %}">Investors</a></li>
+                                <li><a href="{% url 'selling' %}">Selling</a></li>
+                                <li><a href="{% url 'buying' %}">Buying</a></li>
+                               <li><a href="{% url 'landlords' %}">Landlords</a></li>
+                                <li><a href="portfolio-single.html">Letting</a></li>
+                                <li><a href="portfolio-single.html">Vacational Rentals</a></li>
+                                <li><a href="portfolio-single.html">New Developments</a></li>
+                            {% endblock %}
+
 {% block main %}
 
-  
-
-  <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-  <!-- Overlay -->
-  <div class="overlay"></div>
-
-  <!-- Indicators -->
-
-  
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" style='margin-top:-6%'>
-    <div class="item slides active">
-      <div class="slide-1"></div>
-      <div class="hero">
-       
-            <img src="{% static 'assets/img/nl.png' %}" style='width:20%'/>
-            <h1>We are propertyssimo</h1>        
-            <h3>Investment Advisory</h3>
-      
-        <a href="{% url 'site_listings' %}"><button  class="btn btn-hero btn-lg" role="button" style='background:none;'>See Available Properties</button></a>
-      </div>
-    </div>
-    
-  </div> 
-</div>
-<div class='container' >
-  <div class='row'>
-    <div class='col-lg-1'></div>
-    <div class='col-lg-10'>
-<nav class="navbar navbar-inverse navbar-sub" style='background:transparent;'>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-       
-      <ul class="nav navbar-nav">
-
-        <li style='margin-right:35px;margin-left:35px;margin-bottom:15px;'><a href="{% url 'investing' %}"><b>Investors</b></a></li>
-        <li style='margin-right:35px;'><a href="{% url 'selling' %}"><b>Selling</b></a></li>
-        <li style='margin-right:35px;'><a href="{% url 'buyers' %}"><b>Buying</b></a></li>
-        <li style='margin-right:35px;'><a href="{% url 'landlords' %}"><b>Landlords</b></a></li>
-        <li style='margin-right:35px;'><a href="#"><b>Letting</b></a></li>
-        <li style='margin-right:35px;'><a href="#"><b>Vacational Rentals</b></a></li>
-        <li style='margin-right:35px;'><a href="#"><b>New Developments</b></a></li>
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </nav>
-</div>
-  <div class='col-lg-1'></div>
-</div>
-  </div><!-- /.container-fluid -->
-
-
-  <div class="container">
+                       
+        <section id="main-slider" class="parallax" data-stellar-background-ratio="0.5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main-slider">
+                            <ul class="slides">
+                                <li>
+                                    <h2>Welcome to Propertyssimo</h2>
+                                    <p><a href="#" class="btn border-white">Take a Tour</a></p>
+                                </li>
+                                <li>
+                                    <h2>Get a free consultation</h2>
+                                    <p><a href="#" class="btn border-white">Contact Now</a></p>
+                                </li>
+                                <li>
+                                    <h2>Investing &amp; Buying</h2>
+                                    <p><a href="#" class="btn border-white">Read more</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!--slider main parallax-->
+        
+        <div class="divide80"></div>
+        <div class="container">
+           <h3 class="heading">Latest News</h3>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
       <!-- Wrapper for slides -->
@@ -129,11 +97,11 @@ h1
 
 
     <ul class="list-group col-sm-4">
-      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h4>Lorem ipsum dolor sit amet consetetur sadipscing</h4></li>
-      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>consetetur sadipscing elitr, sed diam nonumy eirmod</h4></li>
-      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>tempor invidunt ut labore et dolore</h4></li>
-      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>magna aliquyam erat, sed diam voluptua</h4></li>
-      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>tempor invidunt ut labore et dolore magna aliquyam erat</h4></li>
+      <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><p>Lorem ipsum dolor sit amet consetetur sadipscing</p></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><p>consetetur sadipscing elitr, sed diam nonumy eirmod</p></li>
+      <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><p>tempor invidunt ut labore et dolore</p></li>
+      <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><p>magna aliquyam erat, sed diam voluptua</p></li>
+      <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><p>tempor invidunt ut labore et dolore magna aliquyam erat</p></li>
     </ul>
 
       <!-- Controls -->
@@ -149,146 +117,371 @@ h1
     </div><!-- End Carousel -->
 </div>
 
-  <div class='container' style='margin-top:100px;'>
-    <div class='row'>
-       <h3 style='padding:15px;'>WHY PROPERTYSSIMO</h3>
-    <div class='col-lg-6'>
-      <h4 style='padding:;'>WHO WE ARE</h4>
-      <iframe src="https://player.vimeo.com/video/125235739?portrait=0&badge=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/125235739">Art&amp;Graft Studio Film&reg; : The Walk</a> from <a href="https://vimeo.com/artandgraft">Art&amp;Graft</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-    </div>
-    <div class='col-lg-3'>
-      <h4 style='padding:;'>WHAT WE OFFER</h4>
-      
-    </div>
-    <div class='col-lg-3'>
-      <h4 style='padding:;'>HOW DEALS HAPPEN</h4>
-      
-    </div>
+        <div class="divide60"></div>
+        <section class="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="heading">Featured Properties</h3>
+                    </div>                   
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="work-carousel" class="owl-carousel owl-spaced">
+                            <div>
+                                <a href='http://propertyssimo.com/property/22'>
+                                    <div class="item-img-wrap ">
+                                        <img src="{% static 'img/Dubai_marina_4.jpg' %}" class="img-responsive" alt="workimg">
+                                        <div class="item-img-overlay">
+                                            <span></span>
+                                        </div>
+                                    </div>                       
+                                </a><!--work link-->
+                                <div class="work-desc">
+                                    
+                                    <h5><a href='http://propertyssimo.com/property/22'>1 Br in Adress Dubai Marina</a><br><b>AED 2,300,000</b></h5>
+                                </div><!--work desc-->
+                            </div><!--owl item-->
+                            <div> 
+                                <a href="http://propertyssimo.com/property/45">
+                                    <div class="item-img-wrap">
+                                        <img src="{% static 'img/1.gif' %}" class="img-responsive" alt="workimg">
+                                        <div class="item-img-overlay">
+                                            <span></span>
+                                        </div>
+                                    </div>                       
+                                </a><!--work link-->
+                                <div class="work-desc">
+                                    <h5><a href="http://propertyssimo.com/property/45">1 Br in Executive Towers</a><br><b>AED 3,780,000</b></h5>
+                                </div><!--work desc-->
+                            </div><!--owl item-->
+                            <div> 
+                                <a href='http://propertyssimo.com/property/18'>
+                                    <div class="item-img-wrap">
+                                        <img src="{% static 'img/bot1.jpg' %}" class="img-responsive" alt="workimg">
+                                        <div class="item-img-overlay">
+                                            <span></span>
+                                        </div>
+                                    </div>                       
+                                </a><!--work link-->
+                                <div class="work-desc">
+                                  
+                                    <h5><a href='http://propertyssimo.com/property/18'>1 Br in Botanica</a><br><b>AED 1,525,000</b></h5>
+                                </div><!--work desc-->
+                            </div><!--owl item-->
+                            <div> 
+                                <a href='http://propertyssimo.com/property/73'>
+                                    <div class="item-img-wrap">
+                                        <img src="{% static 'img/o.jpg' %}" class="img-responsive" alt="workimg">
+                                        <div class="item-img-overlay">
+                                            <span></span>
+                                        </div>
+                                    </div>                       
+                                </a><!--work link-->
+                                <div class="work-desc">
+                                    
+                                    <h5><a href='http://propertyssimo.com/property/73'>3 Br in Sulafa Tower</a><br><b>AED 2,200,000</b></h5>
+                                </div><!--work desc-->
+                            </div><!--owl item-->
+                            <div> 
+                                <a href='http://propertyssimo.com/property/259'>
+                                    <div class="item-img-wrap">
+                                        <img src="{% static 'img/az.jpg' %}" class="img-responsive" alt="workimg">
+                                        <div class="item-img-overlay">
+                                            <span></span>
+                                        </div>
+                                    </div>                       
+                                </a><!--work link-->
+                                <div class="work-desc">
+                                    
+                                    <h5><a href='http://propertyssimo.com/property/259'>2 Br in Azure Residences</a><br><b>AED 4,859,400</b></h5>
+                                </div><!--work desc-->
+                            </div><!--owl item-->
+                            <div> 
+                                <a href='http://propertyssimo.com/property/62'>
+                                    <div class="item-img-wrap">
+                                        <img src="{% static 'img/eh.jpg' %}" class="img-responsive" alt="workimg">
+                                        <div class="item-img-overlay">
+                                            <span></span>
+                                        </div>
+                                    </div>                       
+                                </a><!--work link-->
+                                <div class="work-desc">
+                                  
+                                    <h5><a href='http://propertyssimo.com/property/62'>Office in Empire Heights</a><br><b>AED 1,200,000</b></h5>
+                                </div><!--work desc-->
+                            </div><!--owl item-->
+                             <div> 
+                                <a href='http://propertyssimo.com/property/251'>
+                                    <div class="item-img-wrap">
+                                        <img src="{% static 'img/pj.jpg' %}" class="img-responsive" alt="workimg">
+                                        <div class="item-img-overlay">
+                                            <span></span>
+                                        </div>
+                                    </div>                       
+                                </a><!--work link-->
+                                <div class="work-desc">
+                                  
+                                    <h5><a href='http://propertyssimo.com/property/251'>Penthouse in Palm Jumeirah</a><br><b>AED 12,000,000</b></h5>
+                                </div><!--work desc-->
+                            </div><!--owl item-->
+                             <div> 
+                                <a href='http://propertyssimo.com/property/106'>
+                                    <div class="item-img-wrap">
+                                        <img src="{% static 'img/fj.gif' %}" class="img-responsive" alt="workimg">
+                                        <div class="item-img-overlay">
+                                            <span></span>
+                                        </div>
+                                    </div>                       
+                                </a><!--work link-->
+                                <div class="work-desc">
+                                  
+                                    <h5><a href='http://propertyssimo.com/property/106'>2 Br in Al Furjan</a><br><b>AED 1,200,000</b></h5>
+                                </div><!--work desc-->
+                            </div><!--owl item-->
 
-  </div>
-  </div>
+                              <div> 
+                                <a href='http://propertyssimo.com/property/56'>
+                                    <div class="item-img-wrap">
+                                        <img src="{% static 'img/the_torch.jpg' %}" class="img-responsive" alt="workimg">
+                                        <div class="item-img-overlay">
+                                            <span></span>
+                                        </div>
+                                    </div>                       
+                                </a><!--work link-->
+                                <div class="work-desc">
+                                  
+                                    <h5><a href='http://propertyssimo.com/property/56'>3 Br in The Torch</a><br><b>AED 7,100,000</b></h5>
+                                </div><!--work desc-->
+                            </div><!--owl item-->
+                              <div> 
+                                <a href='http://propertyssimo.com/property/57'>
+                                    <div class="item-img-wrap">
+                                        <img src="{% static 'img/Dubai_marina_4.jpg' %}" class="img-responsive" alt="workimg">
+                                        <div class="item-img-overlay">
+                                            <span></span>
+                                        </div>
+                                    </div>                       
+                                </a><!--work link-->
+                                <div class="work-desc">
+                                  
+                                    <h5><a href='http://propertyssimo.com/property/57'>1 Br in Concorde Tower</a><br><b>AED 1,200,000</b></h5>
+                                </div><!--work desc-->
+                            </div><!--owl item-->
+                        </div>
+                    </div>
+                </div><!--row-->
+                <div class="divide30"></div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a href="{% url 'site_listings' %}" class="btn border-black wow animated fadeInUp">See All Properties</a>
+                    </div>
+                </div>
+            </div><!--container-->
+        </section><!--recent work section -->
+        <section class="testimonials parallax" data-stellar-background-ratio="0.5">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div id="testi-carousel" class="owl-carousel owl-spaced">
+                            <div>
+                                <h4>
+                                    List with us and get the most of your Properties. Take action now!
+                                </h4>
+                                <a href="{% url 'site_listings' %}" style='color:orange; border-color:orange;' class="btn border-black wow animated fadeInUp">List with us</a>
+                            </div><!--testimonials item like paragraph-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!--testimonials-->
+        <div class="divide80"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="heading">Why Propertyssimo</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 margin20">
+                    <div class="post-wrap wow animated fadeInLeft">
+                        <a href="blog-post.html">
+                            <div class="item-img-wrap">
+                                <img src="img/work-7.png" class="img-responsive" alt="workimg">
+                                <div class="item-img-overlay">
+                                    <span></span>
+                                </div>
+                            </div>                       
+                        </a><!--post link--> 
+                        <div class="post-desc">
+                            <h4><a href="#">This is who we are</a></h4>
+                            <p>
+                                Quisque ligulas ipsum, euismod atras vulputate <span class="text-color">iltricies</span> etri elit. Lorem ipsum dolor sit amet, consectetur.
+                            </p>
+                            <p><a href="blog-post.html">Read More...</a></p>
+                        </div><!--post-desc-->
+                    </div><!-- post wrap-->
+                </div>
+                <div class="col-md-4 margin20">
+                    <div class="post-wrap wow animated fadeInLeft">
+                        <a href="blog-post.html">
+                            <div class="item-img-wrap">
+                                <img src="img/work-5.png" class="img-responsive" alt="workimg">
+                                <div class="item-img-overlay">
+                                    <span></span>
+                                </div>
+                            </div>                       
+                        </a><!--post link--> 
+                        <div class="post-desc">
+                            <h4><a href="#">This is what we offer</a></h4>
+                            <p>
+                                Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. <span class="text-color">Lorem ipsum dolor</span> sit amet, consectetur.
+                            </p>
+                            <p><a href="blog-post.html">Read More...</a></p>
+                        </div><!--post-desc-->
+                    </div><!-- post wrap-->
+                </div>
+                <div class="col-md-4 margin20">
+                    <div class="post-wrap wow animated fadeInLeft">
+                        <a href="blog-post.html">
+                            <div class="item-img-wrap">
+                                <img src="img/work-8.png" class="img-responsive" alt="workimg">
+                                <div class="item-img-overlay">
+                                    <span></span>
+                                </div>
+                            </div>                       
+                        </a><!--post link--> 
+                        <div class="post-desc">
+                            <h4><a href="#">How the deals happen</a></h4>
+                            <p>
+                                Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
+                            </p>
+                            <p><a href="blog-post.html">Read More...</a></p>
+                        </div><!--post-desc-->
+                    </div><!-- post wrap-->
+                </div>
+            </div>
+        </div><!--latest news-->
 
 
-<div class="container" style='margin-top:50px;'>
-    <div class="row">
-      <h3 style='padding:15px;'>FEATURED PROERTIES</h3>
-    <div class="col-md-12">
-                <div id="Carousel" class="carousel-featured slide">
+        <section class="parallax process-rounded" data-stellar-background-ratio="0.5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3>Our Process</h3>
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-md-3 margin20">
+                        <div class="process-box">
+                            <i class="fa fa-lightbulb-o"></i>
+                            <h4>step 1</h4>
+                        </div><!--process box-->
+                    </div><!--process col-->
+                    <div class="col-md-3 margin20">
+                        <div class="process-box">
+                            <i class="fa fa-pencil"></i>
+                            <h4>step 2</h4>
+                        </div><!--process box-->
+                    </div><!--process col-->
+                    <div class="col-md-3 margin20">
+                        <div class="process-box">
+                            <i class="fa fa-bars"></i>
+                            <h4>step 3</h4>
+                        </div><!--process box-->
+                    </div><!--process col-->
+                    <div class="col-md-3 margin20">
+                        <div class="process-box">
+                            <i class="fa fa-plane"></i>
+                            <h4>step 4</h4>
+                        </div><!--process box-->
+                    </div><!--process col-->
+                </div>
+            </div>
+        </section><!--process rounded-->
+        <div class="divide80"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 margin30">
+                    <h3 class="heading">Get In Touch</h3>
+                    <div class="contact-form">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="mail">Email</label>
+                                <input type="email" class="form-control" id="mail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" rows="6" id="message" required></textarea>
+                            </div>
 
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    
-                <div class="item active">
-                  <div class="row">
-                    <div class="col-md-3 post">
-                      <div class="post-img-content">
-                       <a href='http://propertyssimo.com/property/22'><img src="{% static 'assets/img/Dubai_marina_4.jpg' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>1 Br in Adress Dubai Marina</b><br />
-                          <b>AED 2,300,000</b></span>
-                      </div>
-                    </div>
-                   <div class="col-md-3 post">
-                      <div class="post-img-content">
-                   <a href='http://propertyssimo.com/property/45'><img src="{% static 'assets/img/1.gif' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>5 Br in Sadaf 5</b><br />
-                          <b>AED 3,780,000</b></span>
-                      </div>
-                    </div>
-                    <div class="col-md-3 post">
-                      <div class="post-img-content">
-                       <a href='http://propertyssimo.com/property/23'> <img src="{% static 'assets/img/e.jpg' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>1 Br in Executive Towers</b><br />
-                          <b>AED 2,000,000</b></span>
-                      </div>
-                    </div>
-                   <div class="col-md-3 post">
-                      <div class="post-img-content">
-                      <a href='http://propertyssimo.com/property/18'>  <img src="{% static 'assets/img/bot1.jpg' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>1 Br in Botanica</b><br />
-                          <b>AED 1,525,000</b></span>
-                      </div>
-                    </div>
-                  </div><!--.row-->
-                </div><!--.item-->
+                            <button type="submit" class="btn btn-theme-bg">Send Message</button>
+                        </form><!--form-->
+                    </div><!--contact-form-->
+                </div><!--contact col-->
+                <div class="col-md-7 about-us">
+                    <h3 class="heading">Little About us</h3>
+                    <img src="{% static 'img/logo_final.png' %}" class="img-responsive" style='height:auto' alt="">
+                    <p >
+                       Propertyssimo Real Estate has recently launched our new approach and 
+integrated the latest technologies into business of real estate. Supported with 
+highly trained, dedicated, classy team of professionals, prioritizing the interests 
+of our Clientelle Exclusively, we are here to nurture your comfort and success.
+                    </p>
+                </br>
+                    <p>
+                       Being a former AJ Real Estate, established in 2003 we have grown and learned 
+following the strategy of UAE Leaders, combined with international expertise 
+and practice. The world goes further, so do we.
+                    </p>
+                </br>
+                <p>We have earned respect of hundreds investors worldwide, who stay with us for 
+years, refer the family members, associates and friends. The appreciation and 
+gratitude of our clients motivate each member of Propertyssimo family to strike 
+the best deals.</p> 
+                    <div class="divide30"></div>
+                    <blockquote>
+                          <p>
+                  Whether you are an individual or corporate client, and no matter how big or 
+small your goals are, our industry-leading expertise in all aspects or real estate 
+makes Propertyssimo the first place to turn for success.
+                    </p>
+                    </blockquote>
                  
-                <div class="item">
-                  <div class="row">
-                   <div class="col-md-3 post">
-                      <div class="post-img-content">
-                     <a href='http://propertyssimo.com/property/73'>   <img src="{% static 'assets/img/o.jpg' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>1 Br in Royal Oceanic</b><br />
-                          <b>AED 1,500,000</b></span>
-                      </div>
-                    </div>
-                    <div class="col-md-3 post">
-                      <div class="post-img-content">
-                      <a href='http://propertyssimo.com/property/77'> <img src="{% static 'assets/img/the_torch.jpg' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>3 Br in Sulafa Tower</b><br />
-                          <b>AED 2,200,000</b></span>
-                      </div>
-                    </div>
-                    <div class="col-md-3 post">
-                      <div class="post-img-content">
-                     <a href='http://propertyssimo.com/property/259'>   <img src="{% static 'assets/img/az.jpg' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>2 Br in Azure Residences</b><br />
-                          <b>AED 4,859,400</b></span>
-                      </div>
-                    </div>
-                    <div class="col-md-3 post">
-                      <div class="post-img-content">
-                      <a href='http://propertyssimo.com/property/62'>  <img src="{% static 'assets/img/eh.jpg' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>Office in Empire Heights</b><br />
-                          <b>AED 1,200,000</b></span>
-                      </div>
-                    </div>
-                  </div><!--.row-->
-                </div><!--.item-->
-                 
-                <div class="item">
-                  <div class="row">
-                    <div class="col-md-3 post">
-                      <div class="post-img-content">
-                   <a href='http://propertyssimo.com/property/251'><img src="{% static 'assets/img/pj.jpg' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>Penthouse in Palm Jumeirah</b><br />
-                          <b>AED 12,000,000</b></span>
-                      </div>
-                    </div>
-                    <div class="col-md-3 post">
-                      <div class="post-img-content">
-                     <a href='http://propertyssimo.com/property/106'>  <img src="{% static 'assets/img/fj.gif' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>2 Br in Al Furjan</b><br />
-                          <b>AED 1,200,000</b></span>
-                      </div>
-                    </div>
-                   <div class="col-md-3 post">
-                      <div class="post-img-content">
-                      <a href='http://propertyssimo.com/property/56'>  <img src="{% static 'assets/img/the_torch.jpg' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>3 Br in The Torch</b><br />
-                          <b>AED 7,100,000</b></span>
-                      </div>
-                    </div>
-                   <div class="col-md-3 post">
-                      <div class="post-img-content">
-                       <a href='http://propertyssimo.com/property/57'> <img src="{% static 'assets/img/Dubai_marina_4.jpg' %}" class="img-responsive"  /></a>
-                          <span class="post-title"><p>1 Br in Concorde Tower</b><br />
-                          <b>AED 1,200,000</b></span>
-                      </div>
-                    </div>
-                  </div><!--.row-->
-                </div><!--.item-->
-                 
-                </div><!--.carousel-inner-->
-                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-                </div><!--.Carousel-->
-                
-    </div>
+                </div>
+            </div>
+        </div><!--contact and about us end-->
+        <div class="divide60"></div>
+        <div class="container">    
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="heading">Some Facts</h3>
+                </div>
+            </div>
+            <div class="divide40"></div>
+            <div class="row">
+                <div class="col-md-3 margin20 facts-in">
+                    <h3><i class="fa fa-home"></i><span class="counter">200</span></h3>
+                    <h4>Homes for Sale</h4>
+                </div><!--facts in-->
+                <div class="col-md-3 margin20 facts-in">
+                    <h3><i class="fa fa-building"></i><span class="counter">68</span></h3>
+                    <h4>Offices for Rent</h4>
+                </div><!--facts in-->
+                <div class="col-md-3 margin20 facts-in">
+                    <h3><i class="fa fa-users"></i><span class="counter">600</span></h3>
+                    <h4>Customers</h4>
+                </div><!--facts in-->
+                <div class="col-md-3 margin20 facts-in">
+                    <h3><i class="fa fa-list"></i><span class="counter">1500</span></h3>
+                    <h4>Listings</h4>
+                </div><!--facts in-->
+            </div>
+        </div><!--fun facts container-->
 
-
-  </div>
-<div class='text-center'>
-<a href='site_listings'><button class="btn btn-hero btn-lg" role="button" style='background:none;color:black'>View all Properties</button></a>
-</div>
-</div>
-
-{% endblock %}
+        {% endblock %}

@@ -5,27 +5,26 @@
  <link href="{% static 'assets/css/site_listings.css' %}" rel="stylesheet">
 {% endblock %}
 
+ {% block navi %}
+                        <li ><a href="/">Home</a></li>
+                        <li><a href="{% url 'investing' %}">Investors</a></li>
+                                <li><a href="{% url 'selling' %}">Selling</a></li>
+                                <li><a href="{% url 'buying' %}">Buying</a></li>
+                               <li><a href="{% url 'landlords' %}">Landlords</a></li>
+                                <li><a href="portfolio-single.html">Letting</a></li>
+                                <li><a href="portfolio-single.html">Vacational Rentals</a></li>
+                                <li><a href="portfolio-single.html">New Developments</a></li>
+                            {% endblock %}
+
 
 {% block main %}
-{% if area == 'jbr' %}
-<img src="{% static 'assets/img/jbr_cover.jpg' %}" style='width:100%;height:80%;'/>
-{% elif area == 'marina' %}
-<img src="{% static 'assets/img/marina_cover.jpg' %}" style='width:100%;height:80%;'/>
-{% elif area == 'dubai' %}
 
-{% elif area == 'palm' %}
-
-{% elif area == 'downtown' %}
-
-{% endif %}
-
-
-<div class="row" style='margin-top:80px'>
+<div class="row" style='margin-top:'>
     <!-- uncomment code for absolute positioning tweek see top comment in css -->
     <!-- <div class="absolute-wrapper"> </div> -->
     <!-- Menu -->
-<div class='col-lg-2' style='margin-left:; padding:25px'>
-    <h3>Filter your search</h3>
+<div class='col-lg-2' style='margin-left:; padding:50px'>
+    <h4>Filter your search</h4>
     <!-- Main Menu -->
         <ul class="nav navbar-nav " id='viewdetails'>
             <form class="navbar-form " role="search" method="GET">
@@ -68,7 +67,7 @@
       </select></li>
       <li style='margin:10px'><input type="text" name='min_price' class="form-control" style='width:90%;' placeholder="Min Price"></li>
        <li style='margin:10px'><input type="text" name='max_price' class="form-control" style='width:90%;' placeholder="Max Price"></li>
-       <button type='submit' class='btn btn-primary' style='margin:25px;background:none;color:grey;'>Search</button>
+       <button type='submit' class='btn btn-theme-bg' style='margin:25px;'>Search</button>
         </div> 
         </ul>
     </div><!-- /.navbar-collapse -->
@@ -81,7 +80,7 @@
        <div class='col-lg-10'>
                    <div class='row'>
                 <div class='col-sm-6'>
-           <h1 style='padding:25px'> {{listings.count}} available properties </h1>
+           <h3 style='padding:25px'> {{listings.count}} available properties </h3>
 
        </div>
 
@@ -99,6 +98,7 @@
         </div>
     </div>
 </div>
+<hr>
 
 {% endblock %}
 

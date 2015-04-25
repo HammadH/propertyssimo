@@ -11,6 +11,11 @@
 
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800');
 
+@font-face {
+  font-family: 'vivaldi';
+  src: url('vivaldi.ttf');
+}
+
 
 body { 
     font-family: 'Open Sans', sans-serif;
@@ -398,7 +403,7 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../img/plus.png) no-repeat center center rgba(108, 168, 255, 0.7);
+   /* background: url(../img/plus.png) no-repeat center center rgba(108, 168, 255, 0.7);*/
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
     opacity: 0;
@@ -760,7 +765,7 @@ input[type="color"]:focus,
 }
 
 /******owl carousel*******/
-.owl-theme .owl-controls .owl-page span {
+.owl-controls  span {
     display: block;
     width: 12px;
     height: 12px;
@@ -772,6 +777,8 @@ input[type="color"]:focus,
     /* border-radius: 20px; */
     background: #f99200 !important;
 }
+
+
 
 /*contact us*/
 
@@ -797,7 +804,7 @@ input[type="color"]:focus,
 /********************************main slider***********************/
 #main-slider{
     background-image: url(../img/showcase-6.jpg);
-
+   
     overflow: hidden;
     position: relative;
     background-position: 0px -162px !important;

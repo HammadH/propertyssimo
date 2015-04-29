@@ -117,8 +117,12 @@ class ShowListings(View):
 		min_price = request.GET.get('min_price', None)
 		max_price = request.GET.get('max_price', None)
 
-		if min_price or max_price:
+		if min_price and max_price:
 			listings = listings.filter(Q(_price__gte=int(min_price)) & Q(_price__lte=int(max_price)))
+		elif min_price and not max_price:
+			listings = listings.filter(Q(_price__gte=int(min_price)))
+		elif max_price and not min_price:
+			listings = listings.filter(Q(_price__gte=int(max_price)))
 
 		status = request.GET.get('status', None)
 		if status:

@@ -125,7 +125,9 @@
   	{% for listing in listings %}
     <tr class='clickable' data-url='{{listing.get_absolute_url}}' style='cursor:pointer'>
       <td><img src="{{listing.get_thumbnail_image}}"  style='width:150px;height:100px;'></td>
-      <td>{{listing}}<br><span class='badge'>{{listing.get_price}}</span></td>
+      <td>{{listing}}<br><span class='badge'>{{listing.get_price}}</span>
+        <br><span class='badge'>{{listing.size}} sqft</span></td>
+
       {% if listing.type == "SP" %}
       <td>Sale</td>
       {% elif listing.type == "RP" %}
@@ -150,10 +152,10 @@
      {{listing.agent_email}}<br>
      {{listing.agent_mobile}}<br>
      {% if listing.published_on_dbz == "True" %}
-    <img src="{% static 'assets/img/dub.png' %}" style='zoom:0.25'/> 
+    <img src="{% static 'img/dub.png' %}" style='zoom:0.25'/> 
     {% endif %}
     {% if listing.published_on_pf == "True" %}
-    <img src="{% static 'assets/img/prop.jpg' %}" style='zoom:0.3'/> 
+    <img src="{% static 'img/prop.jpg' %}" style='zoom:0.3'/> 
     {% endif %}
     </td>
       </tr>

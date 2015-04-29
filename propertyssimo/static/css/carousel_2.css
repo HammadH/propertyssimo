@@ -12,22 +12,26 @@
 
 /* ------------------- Carousel Styling ------------------- */
 
+
+
 .carousel-inner {
   border-radius: 0;
 }
 
 .carousel-caption {
-  background-color: rgba(0,0,0,.5);
+  margin-left: 17.2%;
+  margin-right: 17.2%;
+  background-color: rgba(0,0,0,.8);
   height: 50px;
-  
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 10;
+
   padding: 15px;
 
- 
+
 }
 
 

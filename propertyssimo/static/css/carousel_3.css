@@ -5,14 +5,17 @@
 }
 /* The controlsy */
 .carousel-control {
-  left: -12px;
-  height: 40px;
-  width: 60px;
-  color:black;
-  margin-top: 170px;
+  left: 0px;
+  height: 180px;
+  width: 40px;
+   
+   color:black;
+    border-radius: 23px 23px 23px 23px;
+    margin-top: 90px;
+
 }
 .carousel-control.right {
-  right: -12px;
+  right: 0px;
 }
 /* The indicators */
 .carousel-indicators {

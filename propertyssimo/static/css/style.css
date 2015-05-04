@@ -257,11 +257,11 @@ p {
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-    color: #f99200;
+    color: #FF6600;
     background-color: transparent;
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
-    color: #f99200;
+    color: #FF6600;
     background-color: #fff;
 }
 .navbar-brand{
@@ -276,7 +276,7 @@ p {
     font-size: 15px;
 }
 .navbar-default .navbar-nav>li>a:hover {
-    color: #f99200;
+    color: #FF6600;
 
 }
 
@@ -975,7 +975,7 @@ input[type="color"]:focus,
     color:#969696;
 }
 .address-info li a:hover{
-    color:#f99200;
+    color:  #FF6600;
 }
 .popular-post li{
     padding-bottom: 20px;

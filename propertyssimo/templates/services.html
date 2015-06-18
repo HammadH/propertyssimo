@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block navi %}
+                        
+                        <li ><a href="{% url 'investing' %}">Investors</a></li>
+                                <li><a href="{% url 'selling' %}">Selling</a></li>
+                                <li><a href="{% url 'buying' %}">Buying</a></li>
+                               <li><a href="{% url 'landlords' %}">Landlords</a></li>
+                                <li><a href="{% url 'renter' %}">Letting</a></li>
+                                <li><a href="{% url 'vacation' %}">Vacational Rentals</a></li>
+                              
+                            {% endblock %}
+
+{% block main %}
+
+
+
+
+
+
+<div class='row' style="background-color:#262626;width:100%;padding:25px;margin-top:;">
+	<div class='container text-center'>
+	 <p style='font-family: Great Vibes, cursive;font-size:30px;margin-top:10px;color:#f0f0f0;'>Propertyssimo Services</p>
+</div>
+</div>
+
+ <section class="portfolio" style='margin-top:;margin-bottom:px;z-index:10;background-color:#f0f0f0;' >
+         <div class='container' style=' margin-top:-59px;margin-bottom:-85px; box-shadow:0 0 30px grey; padding-top:50px; padding-bottom:70px;position:relative; background-color:#f0f0f0;'>
+
+
+         	<p class="heading text-center" style='font-family:Cinzel, serif;color:grey;font-size:25px;hover:#FF6600;focus:#FF6600'>Investment Advisory</p>
+
+         	<div class='container'>
+         		 <div class='row'>
+         		 	<div class='col-md-2'></div>
+
+         		 	<div class='col-md-8'>
+         		 	<p class=" " style='color:grey;font-size:;'>Propertyssimo has everything you need to build highly profitable Property Portfolio.</p>
+                    <p class=" " style='color:grey;font-size:;'>You get a personalized service tailored to your circumstances, investment objectives, risk threshold and expectations on projected returns.</p>
+                    <ul style='color:grey;font-size:;'>
+                        <li>You are first to discover proven strategies and unique investment opportunities offering returns of 12%+ per year</li>
+                         <li>Grow your Property Portfolio with your Personal Advisor</li>
+                          <li>Make more profitable investment decisions</li>
+                      </ul>
+                    <p class=" " style='color:grey;font-size:;'>Propertyssimo never shares your data with third parties.</p>
+
+
+        <p class="heading text-center" style='font-family:Cinzel, serif;color:grey;font-size:25px;hover:#FF6600;focus:#FF6600;margin-top:50px;'>Sales and Rentals</p>
+        
+ 
+         <p class=" " style='color:grey;font-size:;'>Weather you are selling, buying or renting Propertyssimo is committed to establishing a true partnership with each and every one of our clients. Our top priority is to understand your unique goals and help you meet them.</p>
+                       <p class=" " style='color:grey;font-size:;'>Each of our real estate professional possesses a unique perspective and skill set, providing the utmost in service and experience. </p>
+                         <p class=" " style='color:grey;font-size:;'>Weather you have focused your sights on a specific neighbourhood or type of property, our professionals will guide you through the process, from initial search to final closing. our extensive market expertise spans the entire scope of the Dubai City real estate markets. </p>
+
+
+                           <p class="heading text-center" style='font-family:Cinzel, serif;color:grey;font-size:25px;hover:#FF6600;focus:#FF6600;margin-top:50px;'>Development Consultancy</p>
+                           <p class="heading text-center" style='font-family:Cinzel, serif;color:grey;font-size:17px;hover:#FF6600;focus:#FF6600;margin-top:;'>MARKETING NEW DEVELOPMENT PROJECTS</p>
+        
+
+         <p class=" " style='color:grey;font-size:;'>Propertyssimo specialises in predevelopment (off plan property )marketing and sales. We partner with the industry's top real estate developers, consulting on creation and renovation of wide range of residential and commercial development projects.</p>
+                       <p class=" " style='color:grey;font-size:;'>Our involvement in each project is comprehensive. From pre-development and construction to marketing, sales and title deed registration services , Propertyssimo is involved every step of the way. Using our dedicated team from start-up to the final closing, we are uniquely positioned to offer specialised, expert guidance.</p>
+                       
+
+ <p style='font-family: Great Vibes, cursive;font-size:25px;margin-top:70px;color:grey;' class='text-center'> We are Your Dedicated Consultant</p>
+
+<hr style='border-color:#E4E4E4'>
+ </div>
+<div class='col-md-2'></div>
+</div >
+</div >
+</section>
+</div>
+
+ {% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block navi %}
+                        
+                        <li ><a href="{% url 'investing' %}">Investors</a></li>
+                                <li><a href="{% url 'selling' %}">Selling</a></li>
+                                <li><a href="{% url 'buying' %}">Buying</a></li>
+                               <li><a href="{% url 'landlords' %}">Landlords</a></li>
+                                <li><a href="{% url 'renter' %}">Letting</a></li>
+                                <li><a href="{% url 'vacation' %}">Vacational Rentals</a></li>
+                              
+                            {% endblock %}
+
+{% block main %}
+
+
+
+
+<div class='row' style='background-color:#f0f0f0;width:100%;'>
+ <img src="{% static 'img/about-us-header.jpg' %}" class="img-responsive center-block" alt="workimg">
+</div>
+
+<div class='row' style="background-color:#262626;width:100%;padding:25px;">
+	<div class='container text-center'>
+	 <p style='font-family: Great Vibes, cursive;font-size:30px;margin-top:10px;color:#f0f0f0;'>At Propertyssimo, our philosophy is simple, yet it is the key to our success: The right broker makes all the difference.</p>
+</div>
+</div>
+
+ <section class="portfolio" style='margin-top:;margin-bottom:px;z-index:10;background-color:#f0f0f0;' >
+         <div class='container' style=' margin-top:-59px;margin-bottom:-85px; box-shadow:0 0 30px grey; padding-top:50px; padding-bottom:70px;position:relative; background-color:#f0f0f0;'>
+
+
+         	<p class="heading text-center" style='font-family:Cinzel, serif;color:grey;font-size:25px;hover:#FF6600;focus:#FF6600'>About Us</p>
+
+         	<div class='container'>
+         		 <div class='row'>
+         		 	<div class='col-md-2'></div>
+
+         		 	<div class='col-md-8'>
+         		 	<p class=" " style='color:grey;font-size:;'>Propertyssimo  Real    Estate  has  recently  launched  our  new  approach  and integrated the latest technologies into business of real estate. Supported with highly trained, dedicated, classy team of professionals, prioritizing the interests of our Clientelle Exclusively, we are here to nurture your comfort and success .</p>
+
+<p class=" " style='color:grey;font-size:;'>Propertyssimo Real Estate  has  recently  launched  our  new  approach  and integrated the latest technologies into business of real estate. Supported with highly trained, dedicated, classy team of professionals, prioritizing the interests of our Clientelle Exclusively, we are here to nurture your comfort and success.</p>
+
+
+ <p class=" " style='color:grey;font-size:;'>Being a former AJ Real Estate, established in 2003 we have grown and learned following the strategy of UAE Leaders, combined with international  expertise and practice. The world goes further, so we do.</p>
+
+
+ <p class=" " style='color:grey;font-size:;'>We have earned respect of hundreds investors worldwide, who stay with us for years, refer the family members, associates and friends. The appreciation and gratitude of our clients motivate each member of Propertyssimo family to strike the best deals.</p> 
+
+
+ <p class=" " style='color:grey;font-size:;'>Whether you are an individual or corporate client, and no matter how big or small your goals are, our industry-leading expertise in all aspects or real estate makes Propertyssimo the first place to turn for success.</p>
+
+
+ <p style='font-family: Great Vibes, cursive;font-size:25px;margin-top:70px;color:grey;' class='text-center'> We are Your Dedicated Consultant</p>
+
+<hr style='border-color:#E4E4E4'>
+ </div>
+<div class='col-md-2'></div>
+</div >
+</div >
+</section>
+</div>
+
+ {% endblock %}

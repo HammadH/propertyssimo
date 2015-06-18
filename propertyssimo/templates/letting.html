@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block navi %}
+                        
+                        <li ><a href="{% url 'investing' %}">Investors</a></li>
+                                <li><a href="{% url 'selling' %}">Selling</a></li>
+                                <li><a href="{% url 'buying' %}">Buying</a></li>
+                                <li><a href="{% url 'landlords' %}">Landlords</a></li>
+                                <li class="active"><a href="{% url 'renter' %}">Letting</a></li>
+                                <li><a href="{% url 'vacation' %}">Vacational Rentals</a></li>
+                                
+                            {% endblock %}
+
+{% block main %}
+
+ <section class="bread-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>I'm Looking to Rent</h4>
+                    </div>
+                    <div class="col-sm-6 hidden-xs text-right">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li>Renter</li>
+                        </ol><!--breadcrumb-->
+                    </div>
+                </div>
+            </div>
+        </section><!--.bread-wrap-->
+        <div class="divide80"></div>
+        <div class="container">
+            <div class="row">   
+                <div class="col-md-9">
+                    <div class="row">                       
+                          <div class="col-md-12">
+                            <div class="blog-wrap">
+                                
+                                    
+                                        <img src="{% static 'img/showcase-1.jpg' %}" class="img-responsive" alt="workimg">
+                                        
+                                <div class="divide30"></div>
+                                <div class="blog-desc">
+                                
+                                   <h4>I'm Looking to Rent</h4>
+
+                                   <h5 style='margin-top:50px;'>Residential Property</h5>
+                                   <h5>Looking for the Perfect Property to meet you requirements and budget? We can Help!</h5>
+  <p>From the proximity of your child's school to the government registration of your tenancy contract, there are many issues  that need to be taken into consideration before renting your new home.</p><br/>
+
+  
+ <h5>Propertyssimo Leasing Agent is here to:</h5>
+    <div class='row'>
+        <ul style='color:grey'>
+            <li>conduct research on ideal area and neighborhood for you</li>
+             <li>consider convenience of locations in terms of accessibility, transportation, schools, and any other matters of your importance</li>
+              <li>advise on budget, fees, relocation expenses, deposits and utility connection fees</li>
+               <li>inspect the property and take care of necessary repairs or maintenance work</li>
+                <li>make sure that your Tenancy Contract has no hidden sides and all terms, charges, fees, as well as due diligence on property and landlord ownership made.</li>
+                 <li>find you comfortable and happy in your new home</li>
+             </ul>
+</div>
+Contact us to find ideal home for rent.
+
+
+
+<div class='collapse' id='viewdetails'>
+<h5 style='margin-top:50px;'>Commercial Property</h5>
+                                   <h5>Looking for the Perfect Property to meet you requirements and budget? We can Help!</h5>
+  <p>As per Dubai Law, in order to conduct business activity you must lease or purchase commercial premises. If you have a valid trade licence issued by either the Dubai Economic Department or a Dubai Government Free Zone, or you are holding pre approval for new license,you are eligible to rent a commercial property in Dubai. Depending on your activity and business line, Propertyssimo agent guide you for the best solution.</p><br/>
+
+  
+ <h5>Propertyssimo Leasing Agent is here to:</h5>
+    <div class='row'>
+        <ul style='color:grey'>
+            <li>conduct research on ideal area and neighborhood for you</li>
+             <li>consider convenience of locations in terms of accessibility, transportation, schools, and any other matters of your importance</li>
+              <li>advise on budget, fees, relocation expenses, deposits and utility connection fees</li>
+               <li>inspect the property and take care of necessary repairs or maintenance work</li>
+                <li>make sure that your Tenancy Contract has no hidden sides and all terms, charges, fees, as well as due diligence on property and landlord ownership made.</li>
+                 <li>find you comfortable and happy in your new home</li>
+             </ul>
+</div>
+
+
+<h4 style='margin-top:50px;'>Rent vs Buy?<h4>
+    <h5>What are the benefits of renting versus buying?</h5>
+    <p>The decision to continue renting or to buy can be a confusing one. Some people continue renting because of the perceived flexibility of moving almost as soon as you decide. Although moving before a lease is up can cost you money, some continue renting because they don't want the responsibility that goes with home ownership.</p>
+
+    <h5>Here are some things to consider when choosing between renting and buying:</h5>
+   <ul style='color:grey'>
+    <li>Do you want to spend several years in a house or commercial premises?</li>
+    <li>Do you need flexibility to move suddenly to care for family or other reasons?</li>
+    <li>Do you want to keep your assets accessible in the bank, or do you want to invest long-term in property?</li>
+    <li>Is personalizing your surroundings  important to you?</li>
+</ul>
+
+
+<h4 style='margin-top:50px;'>Other reasons to buy Property:</h4>
+<ul style='color:'>
+    <li>It's a good investment. </li>
+<p>Investors say overwhelmingly that real estate can typically be a safer and better investment than stocks and bonds!</p>
+<li>Improvements add value.</li>
+<p> Unlike rental improvements, improvements to your property  increases its value.</p>
+<li>Buying builds equity.</li>
+<p> Buying a home is good use of your money. As you make payments over time, the equity increases. When renting, you get no return for your money. Once the money is spent, it's gone.</p>
+<li>Low interest rates.</li>
+<p> While interest rates are slowly going up, the nation is still experiencing record low rates which allows buyers to buy more house for their money at lower monthly payments.</p>
+<li>Capital appreciation.</li>
+<p> Unlike buying a car, or renting...real estate (when taken care of) usually appreciate in value.</p>
+<li>More Space.</li>
+<p> If you've always wanted that extra room for an office or weight room...here's your chance. Renters typically live in smaller spaces...home buyers have more square footage for their money.</p>
+<li>The "owned" home is your castle.</li>
+<p> You control the decor. You can paint and decorate as you like. You can add to the size of your home and make improvements. You will not have to face rent increases.</p>
+</ul>
+</div>
+
+</div>
+</div><!--blog wrap-->
+
+
+<p class='text-center'><a class="btn" data-toggle="collapse" data-target="#viewdetails">Read more &raquo;</a></p>
+
+                            <ul class="pager">
+                        </div>
+                    </div><!--row-->
+                </div>
+                <div class="col-md-3">
+                    
+                   
+
+
+                    <div class='sidebar-box margin40' style='margin-top:;'>
+<h4>What are the benefits of renting versus buying?</h4>
+<p>The decision to continue renting or to buy can be a confusing one. Some people continue renting because of the perceived flexibility of moving almost as soon as you decide.</p> <p>Although moving before a lease is up can cost you money, some continue renting because they don't want the responsibility that goes with home ownership.</p>
+
+</div>
+<div class='' style='box-shadow:0 0 10px grey; background-color:white; margin-top:-13px;'>
+                            <p class="heading" style='font-family:Cinzel, serif;color:grey;font-size:20px;padding-top:10px;padding-bottom:-55px;padding-left:25px; ;'>Contact Us</p>
+                            <div style='padding-top:10px;padding-left:20px; padding-bottom:-15px;margin-top:-25px;'>
+                            <ul class="address-info list-unstyled" > 
+                                <li style='color:grey;font-size:12px'><i class="fa fa-phone"></i> +971 4 277 6321</li>  
+                                <li style='color:grey;font-size:12px'><i class="fa fa-envelope"></i> <a href="mailto:contact@propertyssimo.com">contact@propertyssimo.com</a></li> 
+                            </ul>
+                            </div>
+                        </div>              
+                </div>
+            </div>
+        </div><!--blog container-->
+
+{% endblock %}

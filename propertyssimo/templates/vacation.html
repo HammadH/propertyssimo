@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block navi %}
+                        
+                        <li ><a href="{% url 'investing' %}">Investors</a></li>
+                                <li><a href="{% url 'selling' %}">Selling</a></li>
+                                <li><a href="{% url 'buying' %}">Buying</a></li>
+                                <li><a href="{% url 'landlords' %}">Landlords</a></li>
+                                <li ><a href="{% url 'renter' %}">Letting</a></li>
+                                <li class="active"><a href="{% url 'vacation' %}">Vacational Rentals</a></li>
+                                
+                            {% endblock %}
+
+{% block main %}
+
+ <section class="bread-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Vacational rentals / short term rent</h4>
+                    </div>
+                    <div class="col-sm-6 hidden-xs text-right">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li>Vacations</li>
+                        </ol><!--breadcrumb-->
+                    </div>
+                </div>
+            </div>
+        </section><!--.bread-wrap-->
+        <div class="divide80"></div>
+        <div class="container">
+            <div class="row">   
+                <div class="col-md-9">
+                    <div class="row">                       
+                          <div class="col-md-12">
+                            <div class="blog-wrap">
+                                
+                                    
+                                        <img src="{% static 'img/showcase-1.jpg' %}" class="img-responsive" alt="workimg">
+                                        
+                                <div class="divide30"></div>
+                                <div class="blog-desc">
+                                
+                                   <h4>I'm looking to Rent for my Vacation</h4>
+
+  <p>Dubai is an absolute holiday destination of 21 st century. We are pleased to offer you wide range of holiday accommodations, based on your interest and budget. From hotels, hotel apartments, serviced apartments and furnished villas you are spoilt for choice.</p><br/>
+
+
+  <p>Furnished and serviced properties managed by Propertyssimo come complete with all conveniences and essentials. Regular checks conducted by our property management team ensure the properties are impeccably maintained.</p><br/>
+
+
+</div>
+</div>
+
+
+
+                            <ul class="pager">
+                        </div>
+                    </div><!--row-->
+                </div>
+                <div class="col-md-3">
+                    
+                   
+
+
+                    <div class='sidebar-box margin40' style='margin-top:;'>
+<h4>Propertyssimo introduces Dubai to the World</h4>
+<p>Dubai is an absolute holiday destination of 21 st century. We are pleased to offer you wide range of holiday accommodations, based on your interest and budget. From hotels, hotel apartments, serviced apartments and furnished villas you are spoilt for choice.</p>
+
+</div>
+<div class='' style='box-shadow:0 0 10px grey; background-color:white; margin-top:-13px;'>
+                            <p class="heading" style='font-family:Cinzel, serif;color:grey;font-size:20px;padding-top:10px;padding-bottom:-55px;padding-left:25px; ;'>Contact Us</p>
+                            <div style='padding-top:10px;padding-left:20px; padding-bottom:-15px;margin-top:-25px;'>
+                            <ul class="address-info list-unstyled" > 
+                                <li style='color:grey;font-size:12px'><i class="fa fa-phone"></i> +971 4 277 6321</li>  
+                                <li style='color:grey;font-size:12px'><i class="fa fa-envelope"></i> <a href="mailto:contact@propertyssimo.com">contact@propertyssimo.com</a></li> 
+                            </ul>
+                            </div>
+                        </div>              
+                </div>
+            </div>
+        </div><!--blog container-->
+
+{% endblock %}

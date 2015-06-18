@@ -2,14 +2,14 @@
 {% load staticfiles %}
 
 {% block navi %}
-                        <li ><a href="/">Home</a></li>
+                      
                         <li ><a href="{% url 'investing' %}">Investors</a></li>
                                 <li><a href="{% url 'selling' %}">Selling</a></li>
                                 <li><a href="{% url 'buying' %}">Buying</a></li>
                                 <li class="active"><a href="portfolio-single.html">Landlords</a></li>
-                                <li><a href="portfolio-single.html">Letting</a></li>
-                                <li><a href="portfolio-single.html">Vacational Rentals</a></li>
-                                <li><a href="portfolio-single.html">New Developments</a></li>
+                                <li><a href="{% url 'renter' %}">Letting</a></li>
+                                <li><a href="{% url 'vacation' %}">Vacational Rentals</a></li>
+                          
                             {% endblock %}
 
 {% block main %}
@@ -43,22 +43,43 @@
                                 <div class="divide30"></div>
                                 <div class="blog-desc">
                                     <h4>Landlords</h4>
-                                   <h5>Looking for Property Management Services?</h5>
+                                   <h5>Looking for Property Management Services? Start Here</h5>
                                    <p>Renting out in Dubai is an adventure! We live in one of the most in-demand and complicated real estate markets in the region. With careful planning, attention to details and consistent follow through, Propertyssimo agents excel at getting their clients the highest price, selected tenants and best terms when it comes to rentingof your most important asset.</p>
   <p>We take the stress out of the process and managing all kinds of requests including maintenance. Our process is tried and true. Relax and let us work out the day-to-day issues.</p>
+
+  <h5>Step 1</h5>
+<p>Request Our Information Package - We'll give you the scoop on our services. Information on the process, tenant qualifications, costs involved.</p>
+
+<h5>Step 2</h5>
+<p>Request an Inspection of Your Property - Next we'll arrange a time to take a look at your property. We'll start work on pricing and marketing.</p>
+
+ <div class='collapse' id='viewdetails' style='margin-top:50px;'>
     <h5>What does Propertyssimo provide?</h5>
-    <li><p>Analyze Market</p></li>
-    <li><p>Estimate rents, make recommendations to maximize rents</p></li>
-    <li><p>Evaluate Potential Returns</p></li>
-    <li><p>Assess Time Frame</p></li>
+    <ul style=''>
+    <li>Analyze Market</li>
+    <p> Estimate rents, make recommendations to maximize rents</p>
+    
+    <li>Marketing Property</li>
+    <p>Advertising property for rent, full-time leasing staff available 7 days a week.</p>
+    
+    <li>Qualifying Tenants</li>
+    <p>Verification of, employment, income, past rental history, criminal background check. Lease and related documents furnished.</p>
+    
+    <li>Maintenance</li>
+    <p>Schedule maintenance as needed. Our maintenance & vendors are bonded and insured. 24-Hour emergency maintenance. Licensed general contractor on staff.</p>
 
+    <li>Accounting</li>
+    <p>Simple cash basis reporting system. Full accounting, bills attached to statement. Current month/quarter and year-to-date status. Prompt payment of bills.</p>
 
-    <div class='collapse' id='viewdetails' style='margin-top:50px;'>
+    <li>Other Services</li>
+    <p>Rent collection, court appearances, lease renewals, notices to tenants, move in/out inspections, live phone answering 7 days a week.</p>
+
+</ul>
+
+   
         <h5>I want to sell or rent, which ever happens first!</h5>
         <p style='margin-top:;'>This is actually a fairly common circumstance. We understand that there are times, when you need income from your property quickly and cannot wait for it to sell. Contact us to request more information.</p>
     
-      <h5 style='margin-top:50px;'>Development Remodelling</h5>
-        <p style='margin-top:;'>Propertyssimo will turn your unsuccessful development into 'Project in Demand'. Our team of affliated consultants, architects and contractors will renevote and/or remodel the development to convert it into feasible and attractive real estate. We have a number of successful buildings converted into Hotels and Hotel Apartments.</p>
     
 
 
@@ -90,9 +111,9 @@
                             <li><a href="{% url 'selling' %}">Selling</a><i class="fa fa-angle-right"></i></li>
 <li><a href="{% url 'investing' %}">Investing</a><i class="fa fa-angle-right"></i></li>
 <li><a href="{% url 'buying' %}">Buying</a><i class="fa fa-angle-right"></i></li>
-<li><a href="portfolio-single.html">Letting</a><i class="fa fa-angle-right"></i></li>
-<li><a href="portfolio-single.html">Vacational Rentals</a><i class="fa fa-angle-right"></i></li>
-<li><a href="portfolio-single.html">New Developments</a><i class="fa fa-angle-right"></i></li>
+<li><a href="{% url 'renter' %}">Letting</a><i class="fa fa-angle-right"></i></li>
+<li><a href="{% url 'vacation' %}">Vacational Rentals</a><i class="fa fa-angle-right"></i></li>
+
                         </ul>
                     </div><!--sidebar-box-->                
                 </div>

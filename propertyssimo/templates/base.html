@@ -39,11 +39,18 @@
                         <a href="#" style='margin-right:100px;'><i class="fa fa-skype fa-2"></i> propertyssimo</a>
 
 
-      <a href="{% url 'marina' %}" style='margin-right:20px;' >Dubai Marina</a>
+      <!-- <a href="{% url 'marina' %}" style='margin-right:20px;' >Dubai Marina</a>
       <a href="{% url 'jbr' %}" style='margin-right:20px;'>Palm Jumeirah</a>
 <a href="{% url 'palm' %}" style='margin-right:20px;'>Downtown</a>
      <a href="{% url 'downtown' %}" style='margin-right:20px;'>JBR</a>     
-     <a href="{% url 'site_listings' %}" style='margin-right:20px;'>All Neighbourhoods</a>
+     <a href="{% url 'site_listings' %}" style='margin-right:20px;'>All Neighbourhoods</a> -->
+       
+           <a href="/" style='margin-right:20px; margin-left:130px;' >Home</a>
+      <a href="{% url 'about_us' %}" style='margin-right:20px;'>About Us</a>
+<a href="{% url 'services' %}" style='margin-right:20px;'>Services</a>
+     <a href="{% url 'careers' %}" style='margin-right:20px;'>Careers</a>
+
+
    
                         
                     </div>
@@ -79,9 +86,10 @@
         </div>
 
                 
-                <div class='center-block' style='margin-right:100px;margin-top:-30px;'>
+                <div class='center-block' style='margin-left:260px;margin-top:-30px;'>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav pull-right">
+                    <div class='container text-center'>
+                    <ul class="nav navbar-nav text-center">
                         {% block navi %}
                        
                             {% endblock %}
@@ -122,6 +130,7 @@
                         </li --><!--.dropdown-->
                          
                     </ul><!--navbar-right for navbar-left replace class with navbar-left-->
+                </div>
                 </div><!--/.nav-collapse -->
             </div>
             </div><!--.container-->
@@ -155,13 +164,11 @@ of our Clientelle Exclusively, we are here to nurture your comfort and success.
                         <div class="footer-col">
                             <h3 class="heading">Important Links</h3>
                             <ul class="address-info">
-                                <li><a href="#">Investing</a></li>
-                                <li><a href="#">Services</a></li> 
-                                <li><a href="#">Advice</a></li> 
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Rental Properties</a></li>
-                                <li><a href="#">Sale Properties</a></li>
+                                <li><a href="{% url 'investing' %}">Investing</a></li>
+                                <li><a href="{% url 'services' %}">Services</a></li> 
+                                <li><a href="{% url 'careers' %}">Careers</a></li>
+                                <li><a href="{% url 'palm' %}">Rental Properties</a></li>
+                                <li><a href="{% url 'marina' %}">Sale Properties</a></li>
 
                             </ul><!--latest post-->
                         </div>

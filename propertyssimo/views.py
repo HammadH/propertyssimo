@@ -13,9 +13,23 @@ class Landing(View):
 		return render_to_response('landing.html', {'featured_listings':featured_listings})
 
 
+class AboutUs(View):
+	def get(self, request, *args, **kwargs):
+		return render_to_response('about_us.html')
+
+
 class Buyers(View):
 	def get(self, request, *args, **kwargs):
 		return render_to_response('buyers.html')
+
+
+class Services(View):
+	def get(self, request, *args, **kwargs):
+		return render_to_response('services.html')		
+
+class Careers(View):
+	def get(self, request, *args, **kwargs):
+		return render_to_response('careers.html')
 
 class Selling(View):
 	def get(self, request, *args, **kwargs):
@@ -24,6 +38,14 @@ class Selling(View):
 class Investing(View):
 	def get(self, request, *args, **kwargs):
 		return render_to_response('investment.html')
+
+class Vacation(View):
+	def get(self, request, *args, **kwargs):
+		return render_to_response('vacation.html')
+
+class Renter(View):
+	def get(self, request, *args, **kwargs):
+		return render_to_response('letting.html')		
 
 
 class Landlords(View):

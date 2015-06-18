@@ -2,14 +2,14 @@
 {% load staticfiles %}
 
 {% block navi %}
-                        <li ><a href="/">Home</a></li>
+                       
                         <li class="active"><a href="{% url 'investing' %}">Investors</a></li>
                                 <li><a href="{% url 'selling' %}">Selling</a></li>
                                 <li><a href="{% url 'buying' %}">Buying</a></li>
                                  <li><a href="{% url 'landlords' %}">Landlords</a></li>
-                                <li><a href="portfolio-single.html">Letting</a></li>
-                                <li><a href="portfolio-single.html">Vacational Rentals</a></li>
-                                <li><a href="portfolio-single.html">New Developments</a></li>
+                                <li><a href="{% url 'renter' %}">Letting</a></li>
+                                <li><a href="{% url 'vacation' %}">Vacational Rentals</a></li>
+                                
                             {% endblock %}
 
 {% block main %}
@@ -54,14 +54,41 @@
                                     <p>Opportunities to invest in property should always be approached with caution. It is crucially important to develop <b>Investment strategy</b> that suits the best to maximise the investment returns and secure <b>the exit strategy</b></p>
 
                                     <div class='collapse' id='viewdetails' style='margin-top:100px;'>
-                                        <h3>What type of Investor are you?</h3>
-                                        <p style='margin-top:50px;'><b>Private Investor</b></p>
-                                        <p>A successful real estate investment relies heavily on the use of right investment strategy; however, they largely depend on the requirements and desires of individual proeprty investor.</p>
+                                        <h4>What type of Investor are you?</h4>
+                                        <h5 style='margin-top:50px;'>Private Investor</h5>
+                                        <p>A successful real estate investment relies heavily on the use of right investment strategy; however, they largely depend on the requirements and desires of individual property investor. </p> 
 
-                                        <p style='margin-top:50px;'><b>Institutional Investor</b></p>
+                                        <p>Before choosing an appropriate investment strategy it is important to define your overall investment objective and what you wish to gain from the investment. </p>
+
+<p>There are number of common property investment strategies being utilised by individual property investors. Each investment strategy is different , targeting a variety of asset classes, risk levels, potential returns and investment terms</p>
+
+<p>With Propertyssimo's experienced Real Estate Investment Specialists you secure:</p>
+<ul style='color:grey'>
+    <li>Exclusive and Unique real estate investment strategies based on your individual needs</li>
+<li>Selection of best property investment and Off Market hidden opportunities</li>
+<li>Comprehensive Investment Portfolio Management and dynamic follow up</li>
+<li>Regular updates and reports on your investment.</li>
+<li>Impressive Investment Returns with minimal risks</li> </ul>
+ 
+<p>Be the first to discover unique investment opportunities!</p>
+<p>We Guarantee: No pressured sales tactics, No obligation to invest, No share of your personal data, just friendly helpful advise when you need it!.</p>
+
+                                        <h5 style='margin-top:50px;'>Institutional Investor</h5>
                                         <p>Propertyssimo's unique combination of real estate investment expertise, industry leading technology, superior support services and acclaimed research will offer customised solutions for institutional investors and sophisticated private family investors.</p>
 
-                                        <p style='margin-top:50px;'><b>Developer</b></p>
+<p>Renewed interest from institutional investors and increased global investment opportunities point to a bright future for real estate as an asset class. Investors are demanding increased control and reporting on their real estate investments, while regulatory change creates new challenges. Adapting efficiency to this new model is the key to success.</p>
+
+<p>There are number of common property investment strategies being utilised by Institutional property investors. Each investment strategy is different , targeting a variety of asset classes, risk levels, potential returns and investment terms</p>
+
+<p>With Propertyssimo's experienced Real Estate Investment Specialists you secure:</p>
+<ul style='color:grey'><li>Exclusive and Unique real estate investment strategies</li> 
+<li>Selection of best property investment and Off Market hidden opportunities</li>
+<li>Comprehensive Investment Portfolio Management and dynamic follow up</li>
+<li>Regular updates and reports on your investment.</li>
+<li>Impressive Investment Returns with minimal risks</li></ul>
+<p>We specialise in most of property types and markets such as residential, commercial, industrial, hospitality and land.</p>
+
+                                        <h5 style='margin-top:50px;'>Developer</h5>
                                         <p>Propertyssimo offers selected developers innovative solutions to securing predevelopment marketing and sales. We do also partner with the industry's top real estate developers, consulting on creation and renovation of wide range of residential and commercial development projects.</p>
 
                                         <p>Our involvement in each project is comprehensive. From pre-development and construction to marketing, sales and title deed registration services, Propertyssimo is involved in every step of the way. Using our dedicated team from start-up to the final closing, we are uniquely positioned to offer specialised expert guidance.</p>
@@ -93,10 +120,10 @@
                         <ul class="list-unstyled cat-list">
                             <li><a href="{% url 'selling' %}">Selling</a><i class="fa fa-angle-right"></i></li>
 <li><a href="{% url 'buying' %}">Buying</a><i class="fa fa-angle-right"></i></li>
-<li><a href="portfolio-single.html">Landlords</a><i class="fa fa-angle-right"></i></li>
-<li><a href="portfolio-single.html">Letting</a><i class="fa fa-angle-right"></i></li>
-<li><a href="portfolio-single.html">Vacational Rentals</a><i class="fa fa-angle-right"></i></li>
-<li><a href="portfolio-single.html">New Developments</a><i class="fa fa-angle-right"></i></li>
+<li><a href="{% url 'landlords' %}">Landlords</a><i class="fa fa-angle-right"></i></li>
+<li><a href="{% url 'renter' %}">Letting</a><i class="fa fa-angle-right"></i></li>
+<li><a href="{% url 'vacation' %}">Vacational Rentals</a><i class="fa fa-angle-right"></i></li>
+
                         </ul>
                     </div><!--sidebar-box-->                
                 </div>
